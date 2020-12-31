@@ -1,0 +1,40 @@
+footer {
+    margin-top: 2%;
+    position: fixed;
+    text-align: center;
+    font-size: 0.8em;
+    width: 100%;
+    bottom: 0;
+}
+.form-rounded {
+    border-radius: 1em;
+    border: 1px solid black;
+}
+
+.search {
+    color: #a3ada6;
+}
+
+#search-button {
+    border-radius: 1em;
+    background: transparent;
+    border: 2px solid #a3ada6;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
