@@ -3,7 +3,7 @@
 @section ('content')
     <div class="row justify-content-center align-items-center">
         <div class="mt-5 w-25 text-center">
-            <form action="{{ route('weather', ['city' => Request::get('city')]) }}">
+            <form action="{{ route('weather', ['city' => ''])}}">
                 <div class="form-group has-search">
                     <label for="search-input" class="form-label fs-3">Weather App</label>
                     <span class="fa fa-search form-control-feedback"></span>
