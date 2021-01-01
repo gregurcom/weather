@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+Route::get('/', function () {
+    return view('welcome');
+})->name('home');
 
-Route::get('/result-weather/{country}', function () {
+Route::get('/result-weather', function () {
     return view('weather');
-})->name('result.weather');
+})->name('weather');
