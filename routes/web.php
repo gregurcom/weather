@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [\App\Http\Controllers\IndexController::class, 'show'])->name('home');
 
-Route::get('/result-weather', function () {
-    return view('weather');
-})->name('weather');
+Route::get('/result-weather', [\App\Http\Controllers\WeatherController::class, 'show'])->name('weather');
