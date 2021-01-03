@@ -13,7 +13,7 @@
             <header>
                 <div class="container-fluid">
                     <nav class="navbar navbar-light bg-light mb-5">
-                        <div class="container-fluid">
+                        <div class="container-fluid mr-5">
                             <i class="fa fa-sun-o fa-2x"></i>
                             <i class="fa fa-sliders fa-2x"></i>
                         </div>
