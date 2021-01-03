@@ -17,4 +17,4 @@ use App\Http\Controllers\WeatherController;
 
 Route::get('/', [IndexController::class, 'home'])->name('home');
 
-Route::get('/result-weather', [WeatherController::class, 'weather'])->name('weather');
+Route::get('/weather', [WeatherController::class, 'weather'])->name('weather');

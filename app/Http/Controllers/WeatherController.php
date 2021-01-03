@@ -11,9 +11,9 @@ class WeatherController extends Controller
 {
     public function weather(SearchByCityRequest $request): View|RedirectResponse
     {
-        $response = HTTP::get("http://api.weatherapi.com/v1/current.json", [
-            "key" => config("app.weather_key"),
-            "q" => $request->city
+        $response = HTTP::get('http://api.weatherapi.com/v1/current.json', [
+            'key' => config('app.weather_key'),
+            'q' => $request->city
         ]);
 
         if (!isset($response->json()['error'])) {
