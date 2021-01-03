@@ -123,7 +123,7 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
-    'weather_key' => env('APP_WEATHERAPI_KEY'),
+    'weatherapi_key' => env('APP_WEATHERAPI_KEY'),
 
     /*
     |--------------------------------------------------------------------------
