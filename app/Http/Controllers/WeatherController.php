@@ -21,7 +21,7 @@ class WeatherController extends Controller
         } else {
             return redirect()
                 ->route('home')
-                ->with('status', 'Сity ​​was not found');
+                ->with('status', 'City ​​was not found');
         }
     }
 }
