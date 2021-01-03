@@ -123,6 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'weather_key' => env('APP_WEATHERAPI_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
