@@ -11,10 +11,10 @@
     <body>
         @section('header')
             <header>
-                <div class="container-fluid">
-                    <nav class="navbar navbar-light bg-light mb-5">
-                        <div class="container-fluid mr-5">
-                            <i class="fa fa-sun-o fa-2x"></i>
+                <div class="mt-2 mb-5">
+                    <nav class="navbar navbar-light bg-light">
+                        <div class="container-fluid h5">
+                            <div class="fw-bold">Weather App</div>
                             <i class="fa fa-sliders fa-2x"></i>
                         </div>
                     </nav>
@@ -28,7 +28,7 @@
             <footer class="bg-light text-center text-lg-start">
                 <!-- Copyright -->
                 <div class="text-center p-3">
-                    Footer
+                    Copyright © {{ date("Y") }} <span class="fw-bold">Weather App</span>
                 </div>
                 <!-- Copyright -->
             </footer>

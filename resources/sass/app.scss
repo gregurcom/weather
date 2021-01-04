@@ -26,6 +26,29 @@
     color: #aaa;
 }
 
+.navbar {
+    border-bottom: 2px solid darkgrey;
+}
+
+input {
+    text-indent: 16px;
+}
+
+.back {
+    color: dodgerblue;
+    padding: 0px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.table {
+    margin: auto;
+    width: 60% !important;
+    table-layout: fixed;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -33,16 +56,5 @@ footer {
     /* Set the fixed height of the footer here */
     height: 60px;
     background: #F37A1D;
-    border-top: 2px solid black;
+    border-top: 2px solid darkgrey;
 }
-
-.back {
-    color: dodgerblue;
-    padding: 0px;
-}
-
-.table {
-    margin: auto;
-    width: 50% !important;
-}
-

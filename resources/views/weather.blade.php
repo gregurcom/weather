@@ -14,18 +14,27 @@
         </div>
 
         <div class="h1 text-center mt-4">
-            <span class="fa fa-cloud mr-2"></span>{{ $data['current']['temp_c'] }} °С
+            <img src="{{ $data['current']['condition']['icon'] }}" class="h1">
+            {{ $data['current']['temp_c'] }} °С
         </div>
 
-        <table class="w-50 table table-bordered mt-5 text-center">
+        <table class="table table-bordered mt-4 text-center">
             <thead>
                 <tr>
-                    <th scope="col">Humidity {{ $data['current']['humidity'] }}%</th>
-                    <th scope="col">Wind {{ $data['current']['wind_kph'] }} km/h</th>
+                    <th scope="col">Humidity
+                        <div class="w-auto">{{ $data['current']['humidity'] }}%</div>
+                    </th>
+                    <th scope="col">Wind
+                        <div class="w-auto">{{ $data['current']['wind_kph'] }} km/h</div>
+                    </th>
                 </tr>
                 <tr>
-                    <th scope="col">Pressure {{ $data['current']['pressure_mb'] }} mb</th>
-                    <th scope="col">Precipitation {{ $data['current']['precip_mm'] }} mm</th>
+                    <th scope="col">Pressure
+                        <div class="w-auto">{{ $data['current']['pressure_mb'] }} mb</div>
+                    </th>
+                    <th scope="col">Precipitation
+                        <div class="w-auto">{{ $data['current']['precip_mm'] }} mm</div>
+                    </th>
                 </tr>
             </thead>
         </table>
