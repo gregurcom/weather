@@ -11,26 +11,22 @@
     <body>
         @section('header')
             <header>
-                <div class="mt-2 mb-5">
-                    <nav class="navbar navbar-light bg-light">
-                        <div class="container-fluid h5">
-                            <div class="fw-bold">Weather App</div>
-                            <i class="fa fa-sliders fa-2x"></i>
-                        </div>
-                    </nav>
-                </div>
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid h5">
+                        <div class="fw-bold">Weather App</div>
+                        <i class="fa fa-sliders fa-2x"></i>
+                    </div>
+                </nav>
             </header>
         @show
 
         @yield('content')
 
         @section('footer')
-            <footer class="bg-light text-center text-lg-start">
-                <!-- Copyright -->
-                <div class="text-center p-3">
-                    Copyright © {{ date("Y") }} <span class="fw-bold">Weather App</span>
+            <footer class="footer">
+                <div class="container">
+                    <span class="text-muted">Place sticky footer content here.</span>
                 </div>
-                <!-- Copyright -->
             </footer>
         @show
     </body>
