@@ -9,7 +9,7 @@
         <title>@section('title', 'Weather App')</title>
     </head>
     <body class="h-100">
-        <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <div class="d-flex w-100 h-100 mx-auto flex-column">
             @section('header')
                 <header class="mb-auto">
                     <nav class="navbar navbar-light bg-light">
@@ -24,8 +24,8 @@
             @yield('content')
 
             @section('footer')
-                <footer class="footer mt-auto">
-                    <div class="container text-center">
+                <footer class="footer mt-auto py-3 text-center">
+                    <div class="container">
                         <span class="text-muted">Copyright © {{ date("Y") }} Weather App</span>
                     </div>
                 </footer>
