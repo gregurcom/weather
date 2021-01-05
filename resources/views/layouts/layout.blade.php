@@ -25,7 +25,7 @@
 
             @section('footer')
                 <footer class="footer mt-auto">
-                    <div class="containe text-center">
+                    <div class="container text-center">
                         <span class="text-muted">Copyright © {{ date("Y") }} Weather App</span>
                     </div>
                 </footer>
