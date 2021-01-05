@@ -13,7 +13,9 @@
 @section('content')
     <div class="container-fluid text-center">
         <div class="h1">{{ $data['location']['name'] }}
-            <span class="fa fa-map-marker ml-1"></span>
+            <a href="{{ route('map', ['q' => $data['location']['name']]) }}">
+                <span class="fa fa-map-marker ml-1"></span>
+            </a>
         </div>
 
         <div class="h1 mt-4">

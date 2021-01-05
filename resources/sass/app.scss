@@ -26,6 +26,11 @@
     color: #aaa;
 }
 
+#logo {
+    text-decoration: none;
+    color: black;
+}
+
 .navbar {
     border-bottom: 2px solid darkgrey;
     height: 50px;
@@ -38,7 +43,7 @@
 .back {
     color: dodgerblue;
     position: absolute;
-    margin-top: 70px;
+    margin-top: 95px;
     margin-left: 13px;
 
     a {
@@ -60,4 +65,17 @@ footer {
 
 .data-weather {
     font-weight: normal;
+}
+
+#mapid {
+    height: 400px;
+}
+
+.city-map {
+    margin-bottom: 50px;
+    display:inline-block;
+}
+
+.fa-map-marker {
+    color: black;
 }
