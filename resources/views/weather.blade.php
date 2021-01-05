@@ -1,14 +1,17 @@
 @extends('layouts.layout')
 
+@section('header')
+    @parent
+    <div class="h4 back">
+        <a href="{{ route('home') }}">
+            <span class="fa fa-chevron-left ml-5"></span>
+            Back
+        </a>
+    </div>
+@endsection
+
 @section('content')
     <div class="container-fluid">
-        <div class="h4 mb-5 back mt-5">
-            <a href="{{ route('home') }}">
-                <span class="fa fa-chevron-left ml-5"></span>
-                Back
-            </a>
-        </div>
-
         <div class="h1 text-center">{{ $data['location']['name'] }}
             <span class="fa fa-map-marker ml-1"></span>
         </div>
@@ -17,6 +20,7 @@
             <img src="{{ $data['current']['condition']['icon'] }}" class="h1">
             {{ $data['current']['temp_c'] }} °С
         </div>
+
         <div class="row justify-content-md-center">
             <div class="col-sm-4">
                 <table class="table table-bordered mt-4 text-center weather-data-table">
