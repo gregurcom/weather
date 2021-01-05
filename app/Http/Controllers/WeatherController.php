@@ -13,7 +13,7 @@ class WeatherController extends Controller
     {
         $response = HTTP::get('http://api.weatherapi.com/v1/current.json', [
             'key' => config('app.weatherapi_key'),
-            'q' => $request->city,
+            'q' => $request->q,
         ]);
 
         if ($response->successful()) {

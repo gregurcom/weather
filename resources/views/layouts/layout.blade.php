@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,30 +8,28 @@
 
         <title>@section('title', 'Weather App')</title>
     </head>
-    <body>
-        @section('header')
-            <header>
-                <div class="container-fluid">
-                    <nav class="navbar navbar-light bg-light mb-5">
-                        <div class="container-fluid mr-5">
-                            <i class="fa fa-sun-o fa-2x"></i>
+    <body class="h-100">
+        <div class="d-flex w-100 h-100 mx-auto flex-column">
+            @section('header')
+                <header class="mb-auto">
+                    <nav class="navbar navbar-light bg-light">
+                        <div class="container-fluid">
+                            <div class="fw-bold">Weather App</div>
                             <i class="fa fa-sliders fa-2x"></i>
                         </div>
                     </nav>
-                </div>
-            </header>
-        @show
+                </header>
+            @show
 
-        @yield('content')
+            @yield('content')
 
-        @section('footer')
-            <footer class="bg-light text-center text-lg-start">
-                <!-- Copyright -->
-                <div class="text-center p-3">
-                    Footer
-                </div>
-                <!-- Copyright -->
-            </footer>
-        @show
+            @section('footer')
+                <footer class="footer mt-auto py-3 text-center">
+                    <div class="container">
+                        <span class="text-muted">Copyright © {{ date("Y") }} Weather App</span>
+                    </div>
+                </footer>
+            @show
+        </div>
     </body>
 </html>
