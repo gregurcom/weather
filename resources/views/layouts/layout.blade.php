@@ -14,12 +14,14 @@
                 <header class="mb-auto">
                     <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
-                            <div class="fw-bold">Weather App</div>
+                            <a href="{{ route('home') }}" id="logo" class="fw-bold">Weather App</a>
                             <i class="fa fa-sliders fa-2x"></i>
                         </div>
                     </nav>
                 </header>
             @show
+
+            @yield('back-button')
 
             @yield('content')
 

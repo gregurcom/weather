@@ -8,11 +8,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Font awesome
-@import "node_modules/font-awesome/scss/font-awesome.scss";
+@import "~font-awesome/scss/font-awesome.scss";
 
-.has-search form-control {
-    padding-left: 2.375rem;
-}
+@import "~leaflet/dist/leaflet.css";
 
 .has-search .form-control-feedback {
     position: absolute;
@@ -26,6 +24,11 @@
     color: #aaa;
 }
 
+#logo {
+    text-decoration: none;
+    color: black;
+}
+
 .navbar {
     border-bottom: 2px solid darkgrey;
     height: 50px;
@@ -36,9 +39,8 @@
 }
 
 .back {
-    color: dodgerblue;
     position: absolute;
-    margin-top: 70px;
+    margin-top: 95px;
     margin-left: 13px;
 
     a {
@@ -60,4 +62,8 @@ footer {
 
 .data-weather {
     font-weight: normal;
+}
+
+#weather-map {
+    height: 400px;
 }
