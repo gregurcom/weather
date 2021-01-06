@@ -2,7 +2,7 @@
 
 @section('back-button')
     <div class="h4 back">
-        <a href="{{ route('weather', ['q' => $data['location']['name']]) }}">
+        <a href="{{ route('weather', ['q' => $query]) }}">
             <span class="fa fa-chevron-left"></span>
             Back
         </a>

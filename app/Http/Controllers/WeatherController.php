@@ -5,12 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Requests\WeatherRequest;
 use App\Services\WeatherApiService;
 use Illuminate\Contracts\View\View;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Http\RedirectResponse;
 
 class WeatherController extends Controller
 {
-    protected $weatherApiService;
+    private WeatherApiService $weatherApiService;
 
     public function __construct(WeatherApiService $weatherApiService)
     {
@@ -19,10 +18,10 @@ class WeatherController extends Controller
 
     public function weather(WeatherRequest $request): View|RedirectResponse
     {
-        $response = $this->weatherApiService->weatherApi($request);
+        $response = $this->weatherApiService->getCurrentWeather($request->q);
 
         if ($response->successful()) {
-            return view('weather', ['data' => $response->json()]);
+            return view('weather', ['data' => $response->json(), 'query' => $request->q]);
         } else {
             return redirect()
                 ->route('home')
@@ -32,10 +31,10 @@ class WeatherController extends Controller
 
     public function map(WeatherRequest $request): View|RedirectResponse
     {
-        $response = $this->weatherApiService->weatherApi($request);
+        $response = $this->weatherApiService->getCurrentWeather($request->q);
 
         if ($response->successful()) {
-            return view('map', ['data' => $response->json()]);
+            return view('map', ['data' => $response->json(), 'query' => $request->q]);
         } else {
             return redirect()
                 ->route('home')

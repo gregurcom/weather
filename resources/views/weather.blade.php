@@ -12,8 +12,8 @@
 @section('content')
     <div class="container-fluid text-center">
         <div class="h1">{{ $data['location']['name'] }}
-            <a href="{{ route('weather.map', ['q' => Request::input('q')]) }}">
-                <span class="fa fa-map-marker ml-1"></span>
+            <a href="{{ route('weather.map', ['q' => $query]) }}">
+                <span class="fa fa-map-marker ml-1 text-dark"></span>
             </a>
         </div>
 
