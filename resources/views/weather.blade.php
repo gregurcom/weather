@@ -1,7 +1,6 @@
 @extends('layouts.layout')
 
-@section('header')
-    @parent
+@section('back-button')
     <div class="h4 back">
         <a href="{{ route('home') }}">
             <span class="fa fa-chevron-left"></span>
@@ -13,7 +12,7 @@
 @section('content')
     <div class="container-fluid text-center">
         <div class="h1">{{ $data['location']['name'] }}
-            <a href="{{ route('map', ['q' => $data['location']['name']]) }}">
+            <a href="{{ route('weather.map', ['q' => Request::input('q')]) }}">
                 <span class="fa fa-map-marker ml-1"></span>
             </a>
         </div>

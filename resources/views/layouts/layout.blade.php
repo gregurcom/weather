@@ -3,10 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        @section('link-script')
-            <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-            <script src="{{ asset('js/app.js') }}"></script>
-        @show
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <script src="{{ asset('js/app.js') }}"></script>
+
         <title>@section('title', 'Weather App')</title>
     </head>
     <body class="h-100">
@@ -21,6 +20,8 @@
                     </nav>
                 </header>
             @show
+
+            @yield('back-button')
 
             @yield('content')
 
