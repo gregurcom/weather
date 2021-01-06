@@ -8,13 +8,9 @@
 @import '~bootstrap/scss/bootstrap';
 
 // Font awesome
-@import "node_modules/font-awesome/scss/font-awesome.scss";
+@import "~font-awesome/scss/font-awesome.scss";
 
 @import "~leaflet/dist/leaflet.css";
-
-.has-search {
-    padding-left: 2.375rem;
-}
 
 .has-search .form-control-feedback {
     position: absolute;
@@ -43,7 +39,6 @@
 }
 
 .back {
-    color: dodgerblue;
     position: absolute;
     margin-top: 95px;
     margin-left: 13px;

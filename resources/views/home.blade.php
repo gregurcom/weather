@@ -3,7 +3,7 @@
 @section('content')
     <div class="container text-center">
         <div class="row justify-content-center">
-            <div class="col-sm-5">
+            <div class="col-sm-10 col-md-8 col-lg-6">
                 <form action="{{ route('weather') }}">
                     <div class="form-group has-search">
                         <label for="search-input" class="form-label h3">Weather App</label>

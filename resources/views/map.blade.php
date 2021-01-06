@@ -21,13 +21,11 @@
 
     <script>
         let weathermap = L.map('weather-map').setView([{{ $data['location']['lat'] }}, {{ $data['location']['lon'] }}], 12);
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWF6dXJvIiwiYSI6ImNrams3emQzeTR4Y3Qycm5xcm43OWZudXcifQ.Qqk6OhG9yM9QmzsuNhY7oA', {
-            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
             maxZoom: 18,
-            id: 'mapbox/streets-v11',
             tileSize: 512,
             zoomOffset: -1,
-            accessToken: 'pk.eyJ1IjoibWF6dXJvIiwiYSI6ImNrams3emQzeTR4Y3Qycm5xcm43OWZudXcifQ.Qqk6OhG9yM9QmzsuNhY7oA'
         }).addTo(weathermap);
 
         L.marker([{{ $data['location']['lat'] }}, {{ $data['location']['lon'] }}]).addTo(weathermap);
