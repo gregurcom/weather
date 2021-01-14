@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\WeatherController;
+use App\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,5 @@ Route::get('/', [IndexController::class, 'home'])->name('home');
 Route::get('weather', [WeatherController::class, 'weather'])->name('weather');
 
 Route::get('weather/map', [WeatherCOntroller::class, 'map'])->name('weather.map');
+
+Route::get('weather/settings', [SettingController::class, 'weatherSettings'])->name('weather.settings');
