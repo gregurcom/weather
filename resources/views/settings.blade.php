@@ -22,7 +22,7 @@
                         </div>
                         <select class="p-1 rounded-2" name="temperature">
                             <option value="temp_c">Celsius</option>
-                            <option value="temp_f" {{ session('temperature') == 'temp_f' ? 'selected':''}}>Fahrenheit</option>
+                            <option value="temp_f" {{ session('temperature') == 'temp_f' ? 'selected':'' }}>Fahrenheit</option>
                         </select>
                     </div>
                     <div class="input-group mt-3">

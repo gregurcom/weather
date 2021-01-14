@@ -18,6 +18,7 @@ class SettingController extends Controller
 
             return back()->with('status', 'You have successfully changed the settings');
         }
+
         if ($request->from) {
             return view('settings', ['previousPage' => $request->from, 'query' => $request->q]);
         } else {
