@@ -1,7 +1,9 @@
 @extends('layouts.layout')
 
-@section('slider')
-    <a href="{{ route('weather.settings', ['from' => Route::currentRouteName()]) }}"><i class="fa fa-sliders fa-2x text-dark"></i></a>
+@section('navbar-right')
+    <a href="{{ route('settings', ['from' => Route::currentRouteName()]) }}">
+        <i class="fa fa-sliders fa-2x text-dark"></i>
+    </a>
 @endsection
 
 @section('content')

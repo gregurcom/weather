@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SettingsRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\View;
 
 class SettingController extends Controller
 {
-    public function weatherSettings(Request $request)
+    public function settings(SettingsRequest $request): RedirectREsponse|View
     {
-        if ($request->has('settings-button')) {
-            $request->session()->put([
+        if ($request->isMethod('post')) {
+            $request->session()->put('settings', [
                 'temperature' => $request->temperature,
                 'pressure' => $request->pressure,
                 'speed' => $request->speed,
@@ -19,10 +21,6 @@ class SettingController extends Controller
             return back()->with('status', 'You have successfully changed the settings');
         }
 
-        if ($request->from) {
             return view('settings', ['previousPage' => $request->from, 'query' => $request->q]);
-        } else {
-            return redirect()->route('home');
-        }
     }
 }

@@ -1,10 +1,12 @@
 @extends('layouts.layout')
 
-@section('slider')
-    <a href="{{ route('weather.settings', ['from' => Route::currentRouteName(),  'q' => $query]) }}"><i class="fa fa-sliders fa-2x text-dark"></i></a>
+@section('navbar-right')
+    <a href="{{ route('settings', ['from' => Route::currentRouteName(),  'q' => $query]) }}">
+        <i class="fa fa-sliders fa-2x text-dark"></i>
+    </a>
 @endsection
 
-@section('back-button')
+@section('sidebar')
     <div class="h4 back">
         <a href="{{ route('weather', ['q' => $query]) }}">
             <span class="fa fa-chevron-left"></span>
