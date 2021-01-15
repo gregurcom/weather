@@ -39,7 +39,7 @@
                             </th>
                             <th scope="col">Wind
                                 <div class="w-auto data-weather">
-                                    {{ $data['current'][session('speed', 'wind_kph')] }}
+                                    {{ $data['current'][session('settings.speed', 'wind_kph')] }}
                                     {{ session('settings.speed') === 'wind_mph' ? 'mi/h' : 'km/h' }}
                                 </div>
                             </th>
@@ -47,13 +47,13 @@
                         <tr>
                             <th scope="col">Pressure
                                 <div class="w-auto data-weather">
-                                    {{ $data['current'][session('pressure', 'pressure_mb')] }}
+                                    {{ $data['current'][session('settings.pressure', 'pressure_mb')] }}
                                     {{ session('settings.pressure') === 'pressure_in' ? 'in' : 'mb' }}
                                 </div>
                             </th>
                             <th scope="col">Precipitation
                                 <div class="w-auto data-weather">
-                                    {{ $data['current'][session('precipitation', 'precip_mm')] }}
+                                    {{ $data['current'][session('settings.precipitation', 'precip_mm')] }}
                                     {{ session('settings.precipitation') === 'precip_in' ? 'in' : 'mm' }}
                                 </div>
                             </th>
