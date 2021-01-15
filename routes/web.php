@@ -22,4 +22,4 @@ Route::get('weather', [WeatherController::class, 'weather'])->name('weather');
 
 Route::get('weather/map', [WeatherCOntroller::class, 'map'])->name('weather.map');
 
-Route::match(['get', 'post'], 'weather/settings', [SettingController::class, 'settings'])->name('settings');
+Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('settings');
