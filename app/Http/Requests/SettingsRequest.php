@@ -11,7 +11,7 @@ class SettingsRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'temperature' => 'in:temp_c,temp_f',

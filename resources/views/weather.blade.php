@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('navbar-right')
-    <a href="{{ route('settings', ['from' => Route::currentRouteName(),  'q' => $query]) }}">
+    <a href="{{ route('settings', ['from' => Route::currentRouteName(), 'q' => $query]) }}">
         <i class="fa fa-sliders fa-2x text-dark"></i>
     </a>
 @endsection
