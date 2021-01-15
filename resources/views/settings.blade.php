@@ -85,7 +85,7 @@
                         </div>
                     @endif
                     <div class="text-center mt-3">
-                        <button name="settings-button" type="submit" class="btn btn-light w-25 border-dark fw-bold text-dark" id="save-settings-button">Save</button>
+                        <button name="settings-button" type="submit" class="btn btn-light w-25 border-dark fw-bold text-dark">Save</button>
                     </div>
                 </form>
             </div>

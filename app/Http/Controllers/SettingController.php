@@ -8,7 +8,7 @@ use Illuminate\Contracts\View\View;
 
 class SettingController extends Controller
 {
-    public function settings(SettingsRequest $request): RedirectREsponse|View
+    public function settings(SettingsRequest $request): RedirectResponse|View
     {
         if ($request->isMethod('post')) {
             $request->session()->put('settings', [
@@ -21,6 +21,6 @@ class SettingController extends Controller
             return back()->with('status', 'You have successfully changed the settings');
         }
 
-            return view('settings', ['previousPage' => $request->from, 'query' => $request->q]);
+        return view('settings', ['previousPage' => $request->from, 'query' => $request->q]);
     }
 }

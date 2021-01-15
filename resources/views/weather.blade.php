@@ -26,7 +26,7 @@
         <div class="h1 mt-4">
             <img src="{{ $data['current']['condition']['icon'] }}" class="h1">
             {{ $data['current'][session('settings.temperature', 'temp_c')] }}
-            {{ session('settings.temperature') == 'temp_f' ? '°F' : '°C' }}
+            {{ session('settings.temperature') === 'temp_f' ? '°F' : '°C' }}
         </div>
 
         <div class="row justify-content-center">
@@ -40,7 +40,7 @@
                             <th scope="col">Wind
                                 <div class="w-auto data-weather">
                                     {{ $data['current'][session('speed', 'wind_kph')] }}
-                                    {{ session('settings.speed') == 'wind_mph' ? 'mi/h' : 'km/h' }}
+                                    {{ session('settings.speed') === 'wind_mph' ? 'mi/h' : 'km/h' }}
                                 </div>
                             </th>
                         </tr>
@@ -48,13 +48,13 @@
                             <th scope="col">Pressure
                                 <div class="w-auto data-weather">
                                     {{ $data['current'][session('pressure', 'pressure_mb')] }}
-                                    {{ session('settings.pressure') == 'pressure_in' ? 'in' : 'mb' }}
+                                    {{ session('settings.pressure') === 'pressure_in' ? 'in' : 'mb' }}
                                 </div>
                             </th>
                             <th scope="col">Precipitation
                                 <div class="w-auto data-weather">
                                     {{ $data['current'][session('precipitation', 'precip_mm')] }}
-                                    {{ session('settings.precipitation') == 'precip_in' ? 'in' : 'mm' }}
+                                    {{ session('settings.precipitation') === 'precip_in' ? 'in' : 'mm' }}
                                 </div>
                             </th>
                         </tr>
