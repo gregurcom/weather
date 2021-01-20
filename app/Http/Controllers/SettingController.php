@@ -3,20 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SettingsRequest;
+use App\Services\SettingsService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
 
 class SettingController extends Controller
 {
-    public function settings(SettingsRequest $request): RedirectResponse|View
+    public function settings(SettingsRequest $request, SettingsService $settingsService): RedirectResponse|View
     {
         if ($request->isMethod('post')) {
-            $request->session()->put('settings', [
-                'temperature' => $request->temperature,
-                'pressure' => $request->pressure,
-                'speed' => $request->speed,
-                'precipitation' => $request->precipitation,
-            ]);
+            $settingsService->save($request->validated());
 
             return back()->with('status', 'You have successfully changed the settings');
         }

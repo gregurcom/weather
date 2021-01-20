@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@inject('settingsService', 'App\Services\SettingsService')
+
 @section('navbar-right')
     <a href="{{ route('settings', ['from' => Route::currentRouteName(), 'q' => $query]) }}">
         <i class="fa fa-sliders fa-2x text-dark"></i>
@@ -25,8 +27,8 @@
 
         <div class="h1 mt-4">
             <img src="{{ $data['current']['condition']['icon'] }}" class="h1">
-            {{ $data['current'][session('settings.temperature', 'temp_c')] }}
-            {{ session('settings.temperature') === 'temp_f' ? '°F' : '°C' }}
+            {{ $data['current'][$settingsService->get('temperature', 'temp_c')] }}
+            {{ $settingsService->get('temperature') === 'temp_f' ? '°F' : '°C' }}
         </div>
 
         <div class="row justify-content-center">
@@ -34,27 +36,32 @@
                 <table class="table table-bordered mt-4 text-center weather-data-table">
                     <thead>
                         <tr>
-                            <th scope="col">Humidity
+                            <th scope="col">
+                                Humidity
                                 <div class="w-auto data-weather">{{ $data['current']['humidity'] }}%</div>
                             </th>
-                            <th scope="col">Wind
+                            <th scope="col">
+                                Wind
                                 <div class="w-auto data-weather">
-                                    {{ $data['current'][session('settings.speed', 'wind_kph')] }}
-                                    {{ session('settings.speed') === 'wind_mph' ? 'mi/h' : 'km/h' }}
+                                    {{ $data['current'][$settingsService->get('speed', 'wind_kph')] }}
+                                    {{ $settingsService->get('speed') === 'wind_mph' ? 'mi/h' : 'km/h' }}
                                 </div>
                             </th>
                         </tr>
+
                         <tr>
-                            <th scope="col">Pressure
+                            <th scope="col">
+                                Pressure
                                 <div class="w-auto data-weather">
-                                    {{ $data['current'][session('settings.pressure', 'pressure_mb')] }}
-                                    {{ session('settings.pressure') === 'pressure_in' ? 'in' : 'mb' }}
+                                    {{ $data['current'][$settingsService->get('pressure', 'pressure_mb')] }}
+                                    {{ $settingsService->get('pressure') === 'pressure_in' ? 'in' : 'mb' }}
                                 </div>
                             </th>
-                            <th scope="col">Precipitation
+                            <th scope="col">
+                                Precipitation
                                 <div class="w-auto data-weather">
-                                    {{ $data['current'][session('settings.precipitation', 'precip_mm')] }}
-                                    {{ session('settings.precipitation') === 'precip_in' ? 'in' : 'mm' }}
+                                    {{ $data['current'][$settingsService->get('precipitation', 'precip_mm')] }}
+                                    {{ $settingsService->get('precipitation') === 'precip_in' ? 'in' : 'mm' }}
                                 </div>
                             </th>
                         </tr>
