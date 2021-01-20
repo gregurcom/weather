@@ -15,13 +15,13 @@
                     <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
                             <a href="{{ route('home') }}" id="logo" class="fw-bold">Weather App</a>
-                            <i class="fa fa-sliders fa-2x"></i>
+                            @yield('navbar-right')
                         </div>
                     </nav>
                 </header>
             @show
 
-            @yield('back-button')
+            @yield('sidebar')
 
             @yield('content')
 

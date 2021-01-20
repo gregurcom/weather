@@ -1,5 +1,11 @@
 @extends('layouts.layout')
 
+@section('navbar-right')
+    <a href="{{ route('settings') }}">
+        <i class="fa fa-sliders fa-2x text-dark"></i>
+    </a>
+@endsection
+
 @section('content')
     <div class="container text-center">
         <div class="row justify-content-center">
