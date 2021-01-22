@@ -83,7 +83,7 @@
 
                     @if (session('status'))
                         <div class="alert alert-success mt-2">
-                            {{ __('validation.success', ['Status' => session('status')]) }}
+                            {{ __('validation.success') }}
                         </div>
                     @endif
                     <div class="text-center mt-3">
