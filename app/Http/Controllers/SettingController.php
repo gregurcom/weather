@@ -14,7 +14,7 @@ class SettingController extends Controller
         if ($request->isMethod('post')) {
             $settingsService->save($request->validated());
 
-            return back()->with('status', 'You have successfully changed the settings');
+            return back()->with('status', __('validation.success'));
         }
 
         return view('settings', ['previousPage' => $request->from, 'query' => $request->q]);

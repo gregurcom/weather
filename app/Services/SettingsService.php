@@ -22,6 +22,7 @@ class SettingsService
             'pressure' => $date['pressure'],
             'speed' => $date['speed'],
             'precipitation' => $date['precipitation'],
+            'language' => $date['language'],
         ]);
     }
 

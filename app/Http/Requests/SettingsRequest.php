@@ -18,6 +18,7 @@ class SettingsRequest extends FormRequest
             'speed' => 'in:wind_kph,wind_mph',
             'pressure' => 'in:pressure_mb,pressure_in',
             'precipitation' => 'in:precip_mm,precip_in',
+            'language' => 'in:en,ru',
         ];
     }
 }

@@ -15,11 +15,13 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware('locale')->group(function() {
+    Route::get('/', [IndexController::class, 'home'])->name('home');
 
-Route::get('/', [IndexController::class, 'home'])->name('home');
+    Route::get('weather', [WeatherController::class, 'weather'])->name('weather');
 
-Route::get('weather', [WeatherController::class, 'weather'])->name('weather');
+    Route::get('weather/map', [WeatherCOntroller::class, 'map'])->name('weather.map');
 
-Route::get('weather/map', [WeatherCOntroller::class, 'map'])->name('weather.map');
+    Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('settings');
 
-Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('settings');
+});

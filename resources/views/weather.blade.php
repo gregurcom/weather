@@ -12,7 +12,7 @@
     <div class="h4 back">
         <a href="{{ route('home') }}">
             <span class="fa fa-chevron-left"></span>
-            Back
+            {{ __('weather.sidebar') }}
         </a>
     </div>
 @endsection
@@ -37,11 +37,11 @@
                     <thead>
                         <tr>
                             <th scope="col">
-                                Humidity
+                                {{ __('units.humidity') }}
                                 <div class="w-auto data-weather">{{ $data['current']['humidity'] }}%</div>
                             </th>
                             <th scope="col">
-                                Wind
+                                {{ __('units.wind') }}
                                 <div class="w-auto data-weather">
                                     {{ $data['current'][$settingsService->get('speed', 'wind_kph')] }}
                                     {{ $settingsService->get('speed') === 'wind_mph' ? 'mi/h' : 'km/h' }}
@@ -51,14 +51,14 @@
 
                         <tr>
                             <th scope="col">
-                                Pressure
+                                {{ __('units.pressure') }}
                                 <div class="w-auto data-weather">
                                     {{ $data['current'][$settingsService->get('pressure', 'pressure_mb')] }}
                                     {{ $settingsService->get('pressure') === 'pressure_in' ? 'in' : 'mb' }}
                                 </div>
                             </th>
                             <th scope="col">
-                                Precipitation
+                                {{ __('units.precipitation') }}
                                 <div class="w-auto data-weather">
                                     {{ $data['current'][$settingsService->get('precipitation', 'precip_mm')] }}
                                     {{ $settingsService->get('precipitation') === 'precip_in' ? 'in' : 'mm' }}
