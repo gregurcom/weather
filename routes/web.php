@@ -15,6 +15,7 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', [IndexController::class, 'home'])->name('home');
 
 Route::get('weather', [WeatherController::class, 'weather'])->name('weather');

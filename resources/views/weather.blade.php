@@ -12,7 +12,7 @@
     <div class="h4 back">
         <a href="{{ route('home') }}">
             <span class="fa fa-chevron-left"></span>
-            {{ __('weather.sidebar') }}
+            {{ __('weather.button.back') }}
         </a>
     </div>
 @endsection

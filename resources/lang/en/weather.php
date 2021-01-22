@@ -3,8 +3,10 @@
 return [
     'title' => 'Settings',
     'language' => 'Language',
-    'save' => 'Save',
-    'search-button' => 'Search',
-    'search-city' => 'Search by city',
-    'sidebar' => 'Back',
+    'button' => [
+        'save' => 'Save',
+        'search' => 'Search',
+        'search_city' => 'Search by city',
+        'back' => 'Back',
+    ],
 ];

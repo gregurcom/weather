@@ -7,7 +7,7 @@ use App\Services\SettingsService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Contracts\View\View;
 
-class SettingController extends Controller
+final class SettingController extends Controller
 {
     public function settings(SettingsRequest $request, SettingsService $settingsService): RedirectResponse|View
     {

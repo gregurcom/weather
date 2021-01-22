@@ -6,7 +6,7 @@
     <div class="h4 back">
         <a href="{{ $previousPage ? route($previousPage, ['q' => $query]) : route('home') }}">
             <span class="fa fa-chevron-left"></span>
-            {{ __('weather.sidebar') }}
+            {{ __('weather.button.back') }}
         </a>
     </div>
 @endsection
@@ -87,7 +87,7 @@
                         </div>
                     @endif
                     <div class="text-center mt-3">
-                        <button name="settings-button" type="submit" class="btn btn-light w-25 border-dark fw-bold text-dark">{{ __('weather.save') }}</button>
+                        <button name="settings-button" type="submit" class="btn btn-light w-25 border-dark fw-bold text-dark">{{ __('weather.button.save') }}</button>
                     </div>
                 </form>
             </div>

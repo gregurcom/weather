@@ -2,21 +2,30 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\SettingsService;
 use Closure;
 use Illuminate\Http\Request;
 
-class Locale
+final class Locale
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+     * @param  SettingsService $settingsService
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    private SettingsService $settingsService;
+
+    public function __construct(SettingsService $settingsService)
     {
-        $locale = session()->get('settings.language', app()->getLocale());
+        $this->settingsService = $settingsService;
+    }
+
+    public function handle(Request $request, Closure $next): mixed
+    {
+        $locale = $this->settingsService->get('language', app()->getLocale());
         app()->setLocale($locale);
 
         return $next($request);

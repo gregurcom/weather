@@ -7,7 +7,7 @@ use App\Services\WeatherApiService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
-class WeatherController extends Controller
+final class WeatherController extends Controller
 {
     public function weather(WeatherRequest $request, WeatherApiService $weatherApiService): View|RedirectResponse
     {
@@ -18,7 +18,7 @@ class WeatherController extends Controller
         } else {
             return redirect()
                 ->route('home')
-                ->with('status',  __('validation.search-city'));
+                ->with('status',  __('validation.city_not_found '));
         }
     }
 
@@ -31,7 +31,7 @@ class WeatherController extends Controller
         } else {
             return redirect()
                 ->route('home')
-                ->with('status', __('validation.search-city'));
+                ->with('status', __('validation.city_not_found'));
         }
     }
 }
