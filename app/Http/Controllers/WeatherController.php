@@ -18,7 +18,7 @@ final class WeatherController extends Controller
         } else {
             return redirect()
                 ->route('home')
-                ->with('status',  __('validation.city_not_found '));
+                ->with('status',  __('app.alert.city_not_found '));
         }
     }
 
@@ -31,7 +31,7 @@ final class WeatherController extends Controller
         } else {
             return redirect()
                 ->route('home')
-                ->with('status', __('validation.city_not_found'));
+                ->with('status', __('app.alert.city_not_found'));
         }
     }
 }

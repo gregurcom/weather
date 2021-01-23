@@ -8,14 +8,6 @@ use Illuminate\Http\Request;
 
 final class Locale
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  SettingsService $settingsService
-     * @return mixed
-     */
     private SettingsService $settingsService;
 
     public function __construct(SettingsService $settingsService)

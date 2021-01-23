@@ -6,14 +6,14 @@
     <div class="h4 back">
         <a href="{{ $previousPage ? route($previousPage, ['q' => $query]) : route('home') }}">
             <span class="fa fa-chevron-left"></span>
-            {{ __('weather.button.back') }}
+            {{ __('app.button.back') }}
         </a>
     </div>
 @endsection
 
 @section('content')
     <div class="container-fluid">
-        <div class="h1 text-center">{{ __('weather.title') }}</div>
+        <div class="h1 text-center">{{ __('app.title.settings') }}</div>
 
         <div class="row justify-content-center">
             <div class="col-sm-5">
@@ -21,7 +21,7 @@
                     @csrf
                     <div class="input-group mt-3">
                         <div class="col">
-                            <div class="h4">{{ __('units.temperature') }}</div>
+                            <div class="h4">{{ __('app.units.temperature') }}</div>
                         </div>
                         <select class="p-1 rounded-2 select-data-weather" name="temperature">
                             <option value="temp_c">Celsius</option>
@@ -34,7 +34,7 @@
 
                     <div class="input-group mt-3">
                         <div class="col">
-                            <div class="h4">{{ __('units.speed') }}</div>
+                            <div class="h4">{{ __('app.units.speed') }}</div>
                         </div>
                         <select class="p-1 rounded-2 select-data-weather" name="speed">
                             <option value="wind_kph">km/h</option>
@@ -47,7 +47,7 @@
 
                     <div class="input-group mt-3">
                         <div class="col">
-                            <div class="h4">{{ __('units.pressure') }}</div>
+                            <div class="h4">{{ __('app.units.pressure') }}</div>
                         </div>
                         <select class="p-1 rounded-2 select-data-weather" name="pressure">
                             <option value="pressure_mb">mb</option>
@@ -60,7 +60,7 @@
 
                     <div class="input-group mt-3">
                         <div class="col">
-                            <div class="h4">{{ __('units.precipitation') }}</div>
+                            <div class="h4">{{ __('app.units.precipitation') }}</div>
                         </div>
                         <select class="p-1 rounded-2 select-data-weather" name="precipitation">
                             <option value="precip_mm">mm</option>
@@ -73,7 +73,7 @@
 
                     <div class="input-group mt-3">
                         <div class="col">
-                            <div class="h4">{{ __('weather.language') }}</div>
+                            <div class="h4">{{ __('app.label.language') }}</div>
                         </div>
                         <select class="p-1 rounded-2 select-data-weather" name="language">
                             <option value="en">en</option>
@@ -83,11 +83,11 @@
 
                     @if (session('status'))
                         <div class="alert alert-success mt-2">
-                            {{ __('validation.success') }}
+                            {{ __('app.alert.settings_changed') }}
                         </div>
                     @endif
                     <div class="text-center mt-3">
-                        <button name="settings-button" type="submit" class="btn btn-light w-25 border-dark fw-bold text-dark">{{ __('weather.button.save') }}</button>
+                        <button name="settings-button" type="submit" class="btn btn-light w-25 border-dark fw-bold text-dark">{{ __('app.button.save') }}</button>
                     </div>
                 </form>
             </div>

@@ -10,7 +10,7 @@
     <div class="h4 back">
         <a href="{{ route('weather', ['q' => $query]) }}">
             <span class="fa fa-chevron-left"></span>
-            {{ __('weather.button.back') }}
+            {{ __('app.button.back') }}
         </a>
     </div>
 @endsection
