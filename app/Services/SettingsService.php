@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Session\Store;
 
-class SettingsService
+final class SettingsService
 {
     private const SESSION_KEY = 'settings';
 
@@ -22,6 +22,7 @@ class SettingsService
             'pressure' => $date['pressure'],
             'speed' => $date['speed'],
             'precipitation' => $date['precipitation'],
+            'language' => $date['language'],
         ]);
     }
 
