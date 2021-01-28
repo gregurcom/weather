@@ -11,7 +11,7 @@ class SettingsTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_settings_page()
     {
         $response = $this->get(route('settings'));
 

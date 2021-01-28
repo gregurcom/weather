@@ -12,7 +12,7 @@ class MapTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_map_page()
     {
 
         $city = Factory::create()->citySuffix;

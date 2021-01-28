@@ -12,7 +12,7 @@ class SearchCityTest extends TestCase
      *
      * @return void
      */
-    public function test_example()
+    public function test_change_settings()
     {
         $city = Factory::create()->citySuffix;
 
