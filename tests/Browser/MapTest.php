@@ -8,11 +8,6 @@ use Tests\DuskTestCase;
 
 class MapTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     *
-     * @return void
-     */
     public function testCityOnMap()
     {
         $city = Factory::create()->citySuffix;

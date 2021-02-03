@@ -7,14 +7,8 @@ use Tests\TestCase;
 
 class MapTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_map_page()
+    public function test_map_page_with_name_of_city()
     {
-
         $city = Factory::create()->citySuffix;
 
         $response = $this->get(route('weather.map', ['q' => $city]));

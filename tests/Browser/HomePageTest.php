@@ -7,11 +7,6 @@ use Tests\DuskTestCase;
 
 class HomePageTest extends DuskTestCase
 {
-    /**
-     * A basic browser test example.
-     *
-     * @return void
-     */
     public function testHomePage()
     {
         $this->browse(function (Browser $browser) {

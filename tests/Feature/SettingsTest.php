@@ -6,15 +6,10 @@ use Tests\TestCase;
 
 class SettingsTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_settings_page()
+    public function test_settings_page_with_all_set_parameters()
     {
         $response = $this->get(route('settings'));
 
-        $response->assertOk();
+        $response->assertOk()->assertSeeInOrder(['temperature', 'speed', 'pressure', 'precipitation', 'language']);
     }
 }

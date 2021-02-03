@@ -6,12 +6,7 @@ use Tests\TestCase;
 
 class HomeTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_home_page()
+    public function test_home_page_with_app_name()
     {
         $response = $this->get(route('home'));
 

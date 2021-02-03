@@ -5,7 +5,7 @@ namespace App\Services;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Client\Response;
 
-final class WeatherApiService
+class WeatherApiService
 {
     public function getCurrentWeather(string $query): Response
     {

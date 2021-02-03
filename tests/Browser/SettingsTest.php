@@ -7,11 +7,6 @@ use Tests\DuskTestCase;
 
 class SettingsTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     *
-     * @return void
-     */
     public function testApplySettings()
     {
         $this->browse(function (Browser $browser) {

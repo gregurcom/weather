@@ -8,12 +8,7 @@ use Tests\DuskTestCase;
 
 class WeatherTest extends DuskTestCase
 {
-     /**
-     * A Dusk test example.
-     *
-     * @return void
-     */
-    public function testWeather()
+    public function testWeatherPageWithCityName()
     {
         $city = Factory::create()->citySuffix;
 

@@ -5,14 +5,9 @@ namespace Tests\Feature;
 use Faker\Factory;
 use Tests\TestCase;
 
-class SearchCityTest extends TestCase
+class ChangeDefaultSettingsTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_change_settings()
+    public function test_change_temperature_settings()
     {
         $city = Factory::create()->citySuffix;
 
