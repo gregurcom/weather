@@ -4,7 +4,6 @@ namespace Tests\Unit;
 
 use App\Services\WeatherApiService;
 use Faker\Factory;
-use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class WeatherApiServiceTest extends TestCase
