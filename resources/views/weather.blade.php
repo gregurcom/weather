@@ -21,7 +21,7 @@
     <div class="container-fluid text-center">
         <div class="h1">{{ $data['location']['name'] }}
             <a href="{{ route('weather.map', ['q' => $query]) }}">
-                <span class="fa fa-map-marker ml-1 text-dark"></span>
+                <span class="fa fa-map-marker ml-1 text-dark" id="map-button"></span>
             </a>
         </div>
 

@@ -6,7 +6,7 @@ use Tests\TestCase;
 
 class SettingsTest extends TestCase
 {
-    public function test_settings_page_with_all_set_parameters()
+    public function test_settings_page_with_all_set_parameters(): void
     {
         $response = $this->get(route('settings'));
 

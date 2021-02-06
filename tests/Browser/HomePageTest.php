@@ -7,7 +7,7 @@ use Tests\DuskTestCase;
 
 class HomePageTest extends DuskTestCase
 {
-    public function testHomePage()
+    public function testHomePage(): void
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(route('home'))

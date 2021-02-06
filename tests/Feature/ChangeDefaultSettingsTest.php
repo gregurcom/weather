@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class ChangeDefaultSettingsTest extends TestCase
 {
-    public function test_change_temperature_settings()
+    public function test_change_temperature_settings(): void
     {
         $city = Factory::create()->citySuffix;
 

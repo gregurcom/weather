@@ -11,7 +11,7 @@ use Tests\TestCase;
 
 class LocaleMiddlewareTest extends TestCase
 {
-    public function test_locale_middleware()
+    public function test_locale_middleware(): void
     {
         $request = new Request;
 

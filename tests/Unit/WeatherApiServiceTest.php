@@ -4,11 +4,12 @@ namespace Tests\Unit;
 
 use App\Services\WeatherApiService;
 use Faker\Factory;
+use Illuminate\Support\Facades\Http;
 use Tests\TestCase;
 
 class WeatherApiServiceTest extends TestCase
 {
-    public function test_get_success_status_weather_page_with_api_keys()
+    public function test_get_success_status_weather_page_with_api_keys(): void
     {
         $city = Factory::create()->citySuffix;
 

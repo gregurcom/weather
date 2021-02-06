@@ -7,7 +7,7 @@ use Tests\DuskTestCase;
 
 class SettingsTest extends DuskTestCase
 {
-    public function testApplySettings()
+    public function testApplySettings(): void
     {
         $this->browse(function (Browser $browser) {
             $browser->visitRoute('settings')

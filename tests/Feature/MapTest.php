@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class MapTest extends TestCase
 {
-    public function test_map_page_with_name_of_city()
+    public function test_map_page_with_name_of_city(): void
     {
         $city = Factory::create()->citySuffix;
 

@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 
 class SettingsServiceTest extends TestCase
 {
-    public function test_get_temperature_value_temp_f()
+    public function test_get_temperature_value_temp_f(): void
     {
         $settings = Mockery::mock(SettingsService::class);
 
