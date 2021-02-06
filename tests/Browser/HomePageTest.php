@@ -11,7 +11,7 @@ class HomePageTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit(route('home'))
-                ->assertSee(config('app.name'));
+                ->assertSee('Weather App');
         });
     }
 }

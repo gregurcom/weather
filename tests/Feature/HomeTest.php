@@ -10,6 +10,6 @@ class HomeTest extends TestCase
     {
         $response = $this->get(route('home'));
 
-        $response->assertOk()->assertSee(config('app.name'));
+        $response->assertOk()->assertSee('Weather App');
     }
 }
