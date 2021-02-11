@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class SettingsTest extends TestCase
+class SettingsControllerTest extends TestCase
 {
     public function test_settings_page_with_all_set_parameters(): void
     {

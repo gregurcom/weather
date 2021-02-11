@@ -11,7 +11,7 @@ class WeatherApiService
     {
         return Http::get('http://api.weatherapi.com/v1/current.json', [
             'key' => config('app.weatherapi_key'),
-            'q' => $query
+            'q' => $query,
         ]);
     }
 }

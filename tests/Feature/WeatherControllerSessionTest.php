@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Faker\Factory;
 use Tests\TestCase;
 
-class ChangeDefaultSettingsTest extends TestCase
+class WeatherControllerSessionTest extends TestCase
 {
     public function test_change_temperature_settings(): void
     {

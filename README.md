@@ -1,6 +1,7 @@
 # Weather App
 
-## Description
+![Home page](resources/images/homePage.png?raw=true)
+
 **This application shows the weather in any city that interests you**
 
 ## Install application

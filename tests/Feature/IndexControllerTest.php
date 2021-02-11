@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 
-class HomeTest extends TestCase
+class IndexControllerTest extends TestCase
 {
     public function test_home_page_with_app_name(): void
     {

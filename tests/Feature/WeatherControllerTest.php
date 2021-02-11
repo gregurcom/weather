@@ -5,7 +5,7 @@ namespace Tests\Feature;
 use Faker\Factory;
 use Tests\TestCase;
 
-class MapTest extends TestCase
+class WeatherControllerTest extends TestCase
 {
     public function test_map_page_with_name_of_city(): void
     {

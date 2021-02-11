@@ -4,11 +4,10 @@ namespace Tests\Browser;
 
 use Faker\Factory;
 use Laravel\Dusk\Browser;
-use Tests\DuskTestCase;
 
 class WeatherTest extends DuskTestCase
 {
-    public function testWeatherPageWithCityName(): void
+    public function test_weather_page_with_city_name(): void
     {
         $city = Factory::create()->citySuffix;
 

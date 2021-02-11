@@ -4,11 +4,10 @@ namespace Tests\Browser;
 
 use Faker\Factory;
 use Laravel\Dusk\Browser;
-use Tests\DuskTestCase;
 
 class MapTest extends DuskTestCase
 {
-    public function testCityOnMap(): void
+    public function test_city_on_map(): void
     {
         $city = Factory::create()->citySuffix;
 

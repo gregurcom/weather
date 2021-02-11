@@ -3,11 +3,10 @@
 namespace Tests\Browser;
 
 use Laravel\Dusk\Browser;
-use Tests\DuskTestCase;
 
 class SettingsTest extends DuskTestCase
 {
-    public function testApplySettings(): void
+    public function test_apply_settings(): void
     {
         $this->browse(function (Browser $browser) {
             $browser->visitRoute('settings')
