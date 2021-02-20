@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class WeatherApiServiceTest extends TestCase
 {
-    public function test_get_success_status_weather_page_with_api_keys(): void
+    public function test_get_current_weather_query(): void
     {
         Http::fake();
 

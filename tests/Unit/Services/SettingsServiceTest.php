@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class SettingsServiceTest extends TestCase
 {
-    public function test_save_dates_of_weather(): void
+    public function test_save(): void
     {
         $dates = [
             'temperature' => 'temp_f',
@@ -24,17 +24,33 @@ class SettingsServiceTest extends TestCase
         });
 
         $settingsService = new SettingsService($store);
-
         $settingsService->save($dates);
     }
 
-    public function test_get_dates_of_weather(): void
+    public function test_get(): void
     {
         $store = $this->mock(Store::class, function (MockInterface $mock) {
-            $mock->shouldReceive('get')->with('settings.temperature', null)->once();
+            $mock->shouldReceive('get')
+                ->with('settings.temperature', null)
+                ->once()
+                ->andReturn('temp_f');
         });
 
         $settings = new SettingsService($store);
-        $settings->get('temperature');
+        $temperature = $settings->get('temperature');
+
+        $this->assertEquals('temp_f', $temperature);
+    }
+
+    public function test_get_with_default_value(): void
+    {
+        $store = $this->mock(Store::class, function (MockInterface $mock) {
+            $mock->shouldReceive('get')
+                ->with('settings.temperature', 'foo')
+                ->once();
+        });
+
+        $settings = new SettingsService($store);
+        $settings->get('temperature', 'foo');
     }
 }

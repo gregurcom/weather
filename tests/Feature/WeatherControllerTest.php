@@ -2,17 +2,28 @@
 
 namespace Tests\Feature;
 
-use Faker\Factory;
 use Tests\TestCase;
 
 class WeatherControllerTest extends TestCase
 {
-    public function test_map_page_with_name_of_city(): void
+    public function test_weather(): void
     {
-        $city = Factory::create()->citySuffix;
+        $response = $this->call('GET','/weather', ['q' => 'Balti']);
 
-        $response = $this->get(route('weather.map', ['q' => $city]));
+        $response->assertOk()
+            ->assertSee('Balti')
+            ->assertSee('Humidity')
+            ->assertSee('Pressure')
+            ->assertSee('Wind')
+            ->assertSee('Precipitation');
+    }
 
-        $response->assertOk()->assertSee($city)->assertSee('OpenStreetMap');
+    public function test_map(): void
+    {
+        $response = $this->call('GET','/weather/map', ['q' => 'Balti']);
+
+        $response->assertOk()
+            ->assertSee('Balti')
+            ->assertSee('OpenStreetMap');
     }
 }

@@ -6,9 +6,9 @@ use Tests\TestCase;
 
 class IndexControllerTest extends TestCase
 {
-    public function test_home_page_with_app_name(): void
+    public function test_home(): void
     {
-        $response = $this->get(route('home'));
+        $response = $this->get('/');
 
         $response->assertOk()->assertSee('Weather App');
     }

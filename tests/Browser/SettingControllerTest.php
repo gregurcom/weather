@@ -4,7 +4,7 @@ namespace Tests\Browser;
 
 use Laravel\Dusk\Browser;
 
-class SettingsTest extends DuskTestCase
+class SettingControllerTest extends DuskTestCase
 {
     public function test_apply_settings(): void
     {
