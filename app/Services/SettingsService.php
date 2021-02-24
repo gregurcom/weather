@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Session\Store;
 
-final class SettingsService
+class SettingsService
 {
     private const SESSION_KEY = 'settings';
 

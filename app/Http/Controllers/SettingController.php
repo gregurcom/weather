@@ -14,7 +14,7 @@ final class SettingController extends Controller
         if ($request->isMethod('post')) {
             $settingsService->save($request->validated());
 
-            return back()->with('status', __('app.alert.settings_changed'));
+            return redirect()->route('settings')->with('status', __('app.alert.settings_changed'));
         }
 
         return view('settings', ['previousPage' => $request->from, 'query' => $request->q]);
