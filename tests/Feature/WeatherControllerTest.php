@@ -8,7 +8,7 @@ class WeatherControllerTest extends TestCase
 {
     public function test_weather(): void
     {
-        $response = $this->call('GET','/weather', ['q' => 'Balti']);
+        $response = $this->call('GET', '/weather', ['q' => 'Balti']);
 
         $response->assertOk()
             ->assertSee('Balti')
@@ -20,7 +20,7 @@ class WeatherControllerTest extends TestCase
 
     public function test_map(): void
     {
-        $response = $this->call('GET','/weather/map', ['q' => 'Balti']);
+        $response = $this->call('GET', '/weather/map', ['q' => 'Balti']);
 
         $response->assertOk()
             ->assertSee('Balti')
