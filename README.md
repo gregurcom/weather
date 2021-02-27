@@ -25,3 +25,13 @@ Browser Test
 2. ``php artisan serve``
 3. ``php artisan dusk``
 
+## Deploy application
+
+1. Install deployer:
+```bash
+curl -LO https://deployer.org/deployer.phar
+mv deployer.phar /usr/local/bin/dep
+chmod +x /usr/local/bin/dep
+```
+
+2. Run deploy: `dep deploy production`
