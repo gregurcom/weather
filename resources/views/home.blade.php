@@ -12,7 +12,7 @@
             <div class="col-sm-10 col-md-8 col-lg-6">
                 <form action="{{ route('weather') }}">
                     <div class="form-group has-search">
-                        <label for="search-input" class="form-label h3">Weather App</label>
+                        <label for="search-input" class="form-label h3">Weather Application</label>
                         <span class="fa fa-search form-control-feedback"></span>
                         <input type="text" class="form-control rounded-pill" name="q" id="search-city-input" placeholder="{{ __('app.button.search_city') }}">
                         @if ($errors->any())
