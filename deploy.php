@@ -41,3 +41,9 @@ after('deploy:vendors', 'npm:vendors');
 
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
+
+task('services:restart', function () {
+    run('service php8.0-fpm restart');
+    run('service nginx restart');
+});
+after('deploy:symlink', 'services:restart');
