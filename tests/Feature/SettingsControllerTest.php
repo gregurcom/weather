@@ -24,7 +24,7 @@ class SettingsControllerTest extends TestCase
             'language' => 'ru',
         ]);
 
-        $response->assertRedirect('/settings')
+        $response->assertStatus(302)
             ->assertSessionHas('_flash.new');
     }
 }
