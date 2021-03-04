@@ -6,6 +6,13 @@
     </a>
 @endsection
 
+@section('meta')
+    @parent
+    <meta property="og:image" content="{{ $data['current']['condition']['icon'] }}">
+@endsection
+
+@section('title', $data['location']['name'] . ' - map')
+
 @section('sidebar')
     <div class="h4 back">
         <a href="{{ route('weather', ['q' => $query]) }}">

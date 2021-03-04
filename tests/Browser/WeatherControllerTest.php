@@ -9,8 +9,9 @@ class WeatherControllerTest extends DuskTestCase
     public function test_weather(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visitRoute('weather', ['q' => 'Balti'])
-                ->assertSee('Balti')
+            $browser->visitRoute('weather', ['q' => 'Chisinau'])
+                ->assertTitle('Chisinau - weather forecast')
+                ->assertSee('Chisinau')
                 ->assertVisible('.fa-map-marker')
                 ->assertVisible('.fa-sliders');
         });
@@ -19,8 +20,9 @@ class WeatherControllerTest extends DuskTestCase
     public function test_map(): void
     {
         $this->browse(function (Browser $browser) {
-            $browser->visitRoute('weather.map', ['q' => 'Balti'])
-                ->assertSee('Balti')
+            $browser->visitRoute('weather.map', ['q' => 'Chisinau'])
+                ->assertTitle('Chisinau - map')
+                ->assertSee('Chisinau')
                 ->assertSee('OpenStreetMap');
         });
     }

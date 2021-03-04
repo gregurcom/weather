@@ -20,15 +20,18 @@ add('shared_dirs', []);
 add('writable_dirs', []);
 set('allow_anonymous_stats', false);
 
-// Hosts
+// Set default stage
+set('default_stage', 'production');
 
+// Hosts
 host('167.71.56.72')
     ->stage('production')
     ->user('root')
     ->identityFile('~/.ssh/id_rsa')
     ->forwardAgent(true)
     ->multiplexing(true)
-    ->set('deploy_path', '/var/www/{{application}}');
+    ->set('deploy_path', '/var/www/{{application}}')
+    ->set('branch', 'main');
 
 // Tasks
 

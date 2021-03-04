@@ -2,6 +2,8 @@
 
 @inject('settingsService', 'App\Services\SettingsService')
 
+@section('title', 'Weather App - settings')
+
 @section('sidebar')
     <div class="h4 back">
         <a href="{{ $previousPage ? route($previousPage, ['q' => $query]) : route('home') }}">
