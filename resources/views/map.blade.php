@@ -7,8 +7,7 @@
 @endsection
 
 @section('meta')
-    @parent
-    <meta property="og:image" content="{{ $data['current']['condition']['icon'] }}">
+    <meta property="og:image" content="{{ 'http:' . $data['current']['condition']['icon'] }}">
 @endsection
 
 @section('title', $data['location']['name'] . ' - map')
