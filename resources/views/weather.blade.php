@@ -2,6 +2,12 @@
 
 @inject('settingsService', 'App\Services\SettingsService')
 
+@section('meta')
+    <meta property="og:image" content="{{ 'http:' . $data['current']['condition']['icon'] }}">
+@endsection
+
+@section('title', $data['location']['name'] . ' - weather forecast')
+
 @section('navbar-right')
     <a href="{{ route('settings', ['from' => Route::currentRouteName(), 'q' => $query]) }}">
         <i class="fa fa-sliders fa-2x text-dark"></i>

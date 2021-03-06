@@ -10,6 +10,7 @@ class IndexControllerTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visitRoute('home')
+                ->assertTitle('Weather App')
                 ->assertSee('Weather App')
                 ->type('q', 'Balti')
                 ->click('#search-button')

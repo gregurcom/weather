@@ -10,6 +10,7 @@ class SettingControllerTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visitRoute('settings')
+                ->assertTitle('Weather App - settings')
                 ->select('temperature', 'temp_c')
                 ->select('speed', 'wind_mph')
                 ->select('pressure', 'pressure_in')
