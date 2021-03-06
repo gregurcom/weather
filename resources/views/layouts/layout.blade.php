@@ -9,7 +9,7 @@
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}"></script>
-        <link rel="icon" href="{{ asset('images/favicon.ico?v=1') }}" type="image/x-icon">
+        <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
         <title>@yield('title', 'Weather App')</title>
     </head>
     <body class="h-100">
