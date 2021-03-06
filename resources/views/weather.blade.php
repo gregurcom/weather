@@ -3,7 +3,7 @@
 @inject('settingsService', 'App\Services\SettingsService')
 
 @section('meta')
-    <meta property="og:image" content="{{ 'http:' . $data['current']['condition']['icon'] }})">
+    <meta property="og:image" content="{{ 'http:' . $data['current']['condition']['icon'] }}">
 @endsection
 
 @section('title', $data['location']['name'] . ' - weather forecast')
