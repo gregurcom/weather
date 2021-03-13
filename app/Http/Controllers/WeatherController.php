@@ -9,7 +9,7 @@ use Illuminate\Http\RedirectResponse;
 
 final class WeatherController extends Controller
 {
-    public function weatherValues(WeatherRequest $request, WeatherApiService $weatherApiService, $route): View|RedirectResponse
+    public function weatherValues(WeatherRequest $request, WeatherApiService $weatherApiService, string $route): View|RedirectResponse
     {
         $response = $weatherApiService->getCurrentWeather($request->q);
 
