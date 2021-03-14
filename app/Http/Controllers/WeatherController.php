@@ -19,7 +19,7 @@ final class WeatherController extends Controller
         }
 
         return redirect()
-            ->route($route)
+            ->route('home')
             ->with('status',  __('app.alert.city_not_found '));
     }
 
