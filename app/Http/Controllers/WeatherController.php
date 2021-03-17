@@ -9,13 +9,13 @@ use Illuminate\Http\RedirectResponse;
 
 final class WeatherController extends Controller
 {
-    public function weatherValues(WeatherRequest $request, WeatherApiService $weatherApiService, string $route): View|RedirectResponse
+    public function weather(WeatherRequest $request, WeatherApiService $weatherApiService): View|RedirectResponse
     {
         $response = $weatherApiService->getCurrentWeather($request->q);
 
         if ($response != null) {
 
-            return view($route, ['data' => $response, 'query' => $request->q]);
+            return view('weather', ['data' => $response, 'query' => $request->q]);
         }
 
         return redirect()
@@ -23,14 +23,18 @@ final class WeatherController extends Controller
             ->with('status',  __('app.alert.city_not_found '));
     }
 
-    public function weather(WeatherRequest $request, WeatherApiService $weatherApiService): View|RedirectResponse
-    {
-        return $this->weatherValues($request, $weatherApiService, 'weather');
-    }
-
     public function map(WeatherRequest $request, WeatherApiService $weatherApiService): View|RedirectResponse
     {
-        return $this->weatherValues($request, $weatherApiService, 'map');
+        $response = $weatherApiService->getCurrentWeather($request->q);
+
+        if ($response != null) {
+
+            return view('map', ['data' => $response, 'query' => $request->q]);
+        }
+
+        return redirect()
+            ->route('home')
+            ->with('status',  __('app.alert.city_not_found '));
     }
 }
 

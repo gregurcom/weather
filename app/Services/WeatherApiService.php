@@ -9,18 +9,23 @@ final class WeatherApiService
 {
     public function getCurrentWeather(string $query): array|null
     {
-        $data = Http::get('http://api.weatherapi.com/v1/current.json', [
-            'key' => config('app.weatherapi_key'),
-            'q' => $query,
-        ]);
+        if (Cache::has('weather_' . $query)) {
 
-        if ($data->successful()) {
-            return Cache::remember('weather' . $query, 600, function () use ($data) {
+            return Cache::get('weather_'. $query);
+        } else {
+            $data = Http::get('http://api.weatherapi.com/v1/current.json', [
+                'key' => config('app.weatherapi_key'),
+                'q' => $query,
+            ]);
 
-                return $data->json();
-            });
+            if ($data->successful()) {
+                return Cache::remember('weather_' . $query, 600, function () use ($data) {
+
+                    return $data->json();
+                });
+            }
+
+            return null;
         }
-
-        return null;
     }
 }
