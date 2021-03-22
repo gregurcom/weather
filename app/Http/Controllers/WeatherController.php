@@ -11,11 +11,10 @@ final class WeatherController extends Controller
 {
     public function weather(WeatherRequest $request, WeatherApiService $weatherApiService): View|RedirectResponse
     {
-        $response = $weatherApiService->getCurrentWeather($request->q);
+        $data = $weatherApiService->getCurrentWeather($request->q);
 
-        if ($response != null) {
-
-            return view('weather', ['data' => $response, 'query' => $request->q]);
+        if ($data != null) {
+            return view('weather', ['data' => $data, 'query' => $request->q]);
         }
 
         return redirect()
@@ -25,11 +24,10 @@ final class WeatherController extends Controller
 
     public function map(WeatherRequest $request, WeatherApiService $weatherApiService): View|RedirectResponse
     {
-        $response = $weatherApiService->getCurrentWeather($request->q);
+        $data = $weatherApiService->getCurrentWeather($request->q);
 
-        if ($response != null) {
-
-            return view('map', ['data' => $response, 'query' => $request->q]);
+        if ($data != null) {
+            return view('map', ['data' => $data, 'query' => $request->q]);
         }
 
         return redirect()
