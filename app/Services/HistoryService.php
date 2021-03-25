@@ -13,7 +13,7 @@ final class HistoryService
         $this->store = $store;
     }
 
-    public function saveHistory($data)
+    public function saveHistory(array $data): void
     {
         if ($this->store->has('history')) {
             if (in_array($data, session('history'))) {
