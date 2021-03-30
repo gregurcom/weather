@@ -23,7 +23,7 @@
                                     <button class="btn btn-light dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        @foreach(array_reverse($historyService->get('history'), true) as $city)
+                                        @foreach($historyService->get('history') as $city)
                                             <li><a class="dropdown-item" href="{{ route('weather', ['q' => $city]) }}">{{ $city }}</a></li>
                                         @endforeach
                                     </ul>

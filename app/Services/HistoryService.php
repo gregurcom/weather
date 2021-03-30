@@ -15,24 +15,16 @@ final class HistoryService
 
     public function save(string $city): void
     {
-        if ($this->store->has('history')) {
-            if (in_array($city, $this->store->get('history'))) {
-                $repeatingCity = array_search($city, $this->store->get('history'));
-                $this->store->forget('history.' . $repeatingCity);
-                $this->store->push('history', $city);
-            } elseif (count($this->store->get('history')) < 3) {
-                $this->store->push('history', $city);
-            } else {
-                $this->store->forget('history.' . array_key_first($this->store->get('history')));
-                $this->store->push('history', $city);
-            }
-        } else {
-            $this->store->put('history', [$city]);
+        $this->store->put('history.' . 'history_' . $city, $city);
+
+        if (count($this->store->get('history')) > 3)
+        {
+            $this->store->forget('history.' . array_key_first($this->store->get('history')));
         }
     }
 
-    public function get(string $history): array|null
+    public function get(): array
     {
-        return $this->store->get($history);
+        return array_reverse($this->store->get('history', []), true);
     }
 }

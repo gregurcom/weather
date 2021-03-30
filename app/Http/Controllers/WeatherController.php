@@ -15,7 +15,7 @@ final class WeatherController extends Controller
         $data = $weatherApiService->getCurrentWeather($request->q);
 
         if ($data != null) {
-            $historyService->save($data['location']['name']);
+            $historyService->save($request->q);
 
             return view('weather', ['data' => $data, 'query' => $request->q]);
         }
