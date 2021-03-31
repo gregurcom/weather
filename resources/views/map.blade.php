@@ -30,7 +30,9 @@
             </div>
         </div>
     </div>
+@endsection
 
+@section('scripts')
     <script>
         let weathermap = L.map('weather-map').setView([{{ $data['location']['lat'] }}, {{ $data['location']['lon'] }}], 12);
         L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {

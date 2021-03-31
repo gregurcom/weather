@@ -17,4 +17,15 @@ class IndexControllerTest extends DuskTestCase
                 ->assertPathIs('/weather');
         });
     }
+
+    public function test_history(): void
+    {
+        $this->browse(function (Browser $browser) {
+            $browser->visitRoute('home')
+                ->click('#history-button')
+                ->assertSee('Balti')
+                ->click('.city')
+                ->assertPathIs('/weather');
+        });
+    }
 }
