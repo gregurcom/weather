@@ -15,21 +15,30 @@
                 <form action="{{ route('weather') }}">
                     <div class="form-group has-search">
                         <label for="search-input" class="form-label h3">Weather App</label>
+
                         <div class="input-group">
                             <span class="fa fa-search form-control-feedback"></span>
-                            <input type="text" class="form-control rounded-pill" name="q" id="search-city-input" placeholder="{{ __('app.button.search_city') }}">
+                            <input
+                                type="text"
+                                class="form-control {{ $historyService->get('history') ? 'rounded-pill-left' : 'rounded-pill' }}"
+                                name="q" id="search-city-input"
+                                placeholder="{{ __('app.button.search_city') }}"
+                            >
+
                             @if ($historyService->get('history'))
-                                <div class="dropdown">
-                                    <button class="btn btn-light dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary dropdown-toggle rounded-pill-right" id="history-button" type="button" data-toggle="dropdown">
+                                        <span class="fa fa-history"></span>
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <div class="dropdown-menu">
                                         @foreach($historyService->get('history') as $city)
-                                            <li><a class="dropdown-item" href="{{ route('weather', ['q' => $city]) }}">{{ $city }}</a></li>
+                                            <a class="dropdown-item city" href="{{ route('weather', ['q' => $city]) }}">{{ $city }}</a>
                                         @endforeach
-                                    </ul>
+                                    </div>
                                 </div>
                             @endif
                         </div>
+
                         @if ($errors->any())
                             <div class="alert alert-danger mt-2">
                                 @foreach ($errors->all() as $error)
