@@ -20,9 +20,11 @@
                             <span class="fa fa-search form-control-feedback"></span>
                             <input
                                 type="text"
-                                class="form-control {{ $historyService->get('history') ? 'rounded-pill-left' : 'rounded-pill' }}"
+                                class="form-control {{ $historyService->get('history') ? 'rounded-pill-left' : 'rounded-pill' }} cityAutoComplete"
                                 name="q" id="search-city-input"
                                 placeholder="{{ __('app.button.search_city') }}"
+                                data-url="{{ route('weather.auto_complete') }}"
+                                autocomplete="off"
                             >
 
                             @if ($historyService->get('history'))

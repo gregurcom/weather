@@ -5,6 +5,7 @@ import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 window.$ = window.jQuery = require('jquery');
 
 require('bootstrap');
+require('bootstrap-autocomplete')
 
 let DefaultIcon = L.icon({
     iconUrl: icon,
@@ -15,4 +16,8 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 $(function() {
     $('.dropdown-toggle').dropdown();
+
+    $('.cityAutoComplete').autoComplete();
 })
+
+
