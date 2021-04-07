@@ -28,4 +28,17 @@ final class WeatherApiService
             return null;
         }
     }
+
+    public function getSearch(string $query): array
+    {
+        $data = Http::get('http://api.weatherapi.com/v1/search.json', [
+            'key' => config('app.weatherapi_key'),
+            'q' => $query,
+        ]);
+
+        return array_map(function($city) {
+
+            return $city['name'];
+        }, $data->json());
+    }
 }

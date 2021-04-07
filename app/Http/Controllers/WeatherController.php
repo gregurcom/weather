@@ -39,17 +39,5 @@ final class WeatherController extends Controller
             ->route('home')
             ->with('status',  __('app.alert.city_not_found '));
     }
-
-    public function weatherAutoComplete(WeatherRequest $request, WeatherApiSearchService $weatherApiAutoComplete): Response
-    {
-        $data = $weatherApiAutoComplete->getWeather($request->q);
-
-        $cities = [];
-        foreach ($data as $city) {
-            array_push($cities, $city['name']);
-        }
-
-        return response($cities);
-    }
 }
 
