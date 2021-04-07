@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\WeatherRequest;
 use App\Services\HistoryService;
-use App\Services\WeatherApiSearchService;
 use App\Services\WeatherApiService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Response;
 
 final class WeatherController extends Controller
 {
