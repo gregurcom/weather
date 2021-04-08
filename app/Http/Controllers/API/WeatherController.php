@@ -9,7 +9,7 @@ use Illuminate\Http\Response;
 
 class WeatherController extends Controller
 {
-    public function weatherAutoComplete(WeatherRequest $request, WeatherApiService $weatherApiService): Response
+    public function searchAutocomplete(WeatherRequest $request, WeatherApiService $weatherApiService): Response
     {
         $cities = $weatherApiService->getSearch($request->q);
 

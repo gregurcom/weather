@@ -5,7 +5,7 @@ import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 window.$ = window.jQuery = require('jquery');
 
 require('bootstrap');
-require('bootstrap-autocomplete')
+require('bootstrap-autocomplete');
 
 let DefaultIcon = L.icon({
     iconUrl: icon,

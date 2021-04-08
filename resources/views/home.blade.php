@@ -23,7 +23,7 @@
                                 class="form-control {{ $historyService->get('history') ? 'rounded-pill-left' : 'rounded-pill' }} cityAutoComplete"
                                 name="q" id="search-city-input"
                                 placeholder="{{ __('app.button.search_city') }}"
-                                data-url="{{ route('weather.auto_complete') }}"
+                                data-url="{{ route('api.weather.auto_complete') }}"
                                 autocomplete="off"
                             >
 
