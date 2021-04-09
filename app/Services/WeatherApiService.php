@@ -7,13 +7,15 @@ use Illuminate\Support\Facades\Http;
 
 final class WeatherApiService
 {
+    private const URL = 'http://api.weatherapi.com/v1';
+
     public function getCurrentWeather(string $query): array|null
     {
         if (Cache::has('weather_' . $query)) {
 
             return Cache::get('weather_'. $query);
         } else {
-            $data = Http::get('http://api.weatherapi.com/v1/current.json', [
+            $data = Http::get(self::URL . '/current.json', [
                 'key' => config('app.weatherapi_key'),
                 'q' => $query,
             ]);
@@ -27,5 +29,15 @@ final class WeatherApiService
 
             return null;
         }
+    }
+
+    public function getSearch(string $query): array
+    {
+        $data = Http::get(self::URL . '/search.json', [
+            'key' => config('app.weatherapi_key'),
+            'q' => $query,
+        ]);
+
+        return array_map(fn($city) => $city['name'], $data->json());
     }
 }
