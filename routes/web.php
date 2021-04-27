@@ -20,6 +20,8 @@ Route::get('/', [IndexController::class, 'home'])->name('home');
 
 Route::get('weather', [WeatherController::class, 'weather'])->name('weather');
 
-Route::get('weather/map', [WeatherCOntroller::class, 'map'])->name('weather.map');
+Route::get('weather/map', [WeatherController::class, 'map'])->name('weather.map');
 
 Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('settings');
+
+Route::get('weather/subscribe', [WeatherController::class, 'subscribe'])->name('weather.subscribe');

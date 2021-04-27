@@ -7,6 +7,7 @@ use App\Services\HistoryService;
 use App\Services\WeatherApiService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 
 final class WeatherController extends Controller
 {
@@ -36,6 +37,15 @@ final class WeatherController extends Controller
         return redirect()
             ->route('home')
             ->with('status',  __('app.alert.city_not_found '));
+    }
+
+    public function subscribe()
+    {
+        if (Auth::user()) {
+            // create subscriber
+        }
+
+        return view('auth.login');
     }
 }
 
