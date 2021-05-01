@@ -15,7 +15,6 @@
                 </div>
             </div>
         @endauth
-
         @guest
             <div class="mr-4 h3 mr-4">
                 <a href="{{ route('login') }}"><i class="fa fa-sign-in text-dark" aria-hidden="true"></i></a>
