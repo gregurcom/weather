@@ -17,7 +17,7 @@
                 <header class="mb-auto">
                     <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
-                            <a href="{{ route('home') }}" id="logo" class="fw-bold">Weather App</a>
+                            <a href="{{ route('home') }}" id="logo" class="font-weight-bold">Weather App</a>
                             @yield('navbar-right')
                         </div>
                     </nav>

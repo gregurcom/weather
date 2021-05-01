@@ -18,6 +18,8 @@ return [
     'alert' => [
         'city_not_found' => 'City was not found.',
         'settings_changed' => 'You have successfully changed the settings.',
+        'subscribe_city' => 'You have successfully added this city to your subscriptions',
+        'already_subscribe' => 'You are already subscribed to this city',
     ],
     'label' => [
         'language' => 'Language',
