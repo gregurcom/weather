@@ -30,8 +30,8 @@
                                         </div>
                                     </div>
                                 @else
-                                    <div class="mr-4 h3 mr-4">
-                                        <a href="{{ route('login') }}"><i class="fa fa-sign-in text-dark" aria-hidden="true"></i></a>
+                                    <div class="mr-4">
+                                        <a href="{{ route('login') }}" class="h3"><i class="fa fa-sign-in text-dark" aria-hidden="true"></i></a>
                                     </div>
                                 @endauth
 
