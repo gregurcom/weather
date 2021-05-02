@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\WeatherRequest;
-use App\Models\Subscription;
 use App\Services\HistoryService;
 use App\Services\WeatherApiService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 final class WeatherController extends Controller
 {
