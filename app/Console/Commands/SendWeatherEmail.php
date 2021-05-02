@@ -15,7 +15,7 @@ class SendWeatherEmail extends Command
      *
      * @var string
      */
-    protected $signature = 'weather:email';
+    protected $signature = 'emails:weather';
 
     /**
      * The console command description.

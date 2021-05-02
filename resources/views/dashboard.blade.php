@@ -1,29 +1,32 @@
 @extends('layouts.layout')
 
-@section('navbar-right')
-    <div class="dropdown">
-        <button class="h-25 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ auth()->user()->name }}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-        </div>
-    </div>
-@endsection
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="h2 d-flex justify-content-center align-sta">
-                Dashboard
+                {{ __('app.title.dashboard') }}
             </div>
         </div>
         <div class="row">
             <div class="d-flex flex-column">
-                <span class="h4">Your subscriptions</span>
-                <ul class="text-left">
+                @if (auth()->user()->cities->count() == 0)
+                    <span class="h4">{{ __('app.title.without_subscription') }}</span>
+                @else
+                    <span class="h4">{{ __('app.title.subscription') }}</span>
+                @endif
+
+                <ul>
                     @foreach (auth()->user()->cities as $city)
-                        <li><a href="{{ route('weather', ['q' => $city->name]) }}">{{ $city->name }}</a></li>
+                        <div class="mt-3 d-inline-flex align-items-center">
+                            <form action="{{ route('subscribe.remove') }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="city" value="{{ $city->name }}">
+                                <button class="btn btn-danger" type="submit">{{ __('app.button.delete') }}</button>
+                            </form>
+                            <li class="ml-5"><a href="{{ route('weather', ['q' => $city->name]) }}" class="h4 text-dark">{{ $city->name }}</a></li>
+                        </div>
+                        <br>
                     @endforeach
                 </ul>
             </div>

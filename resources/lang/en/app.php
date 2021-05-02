@@ -6,6 +6,7 @@ return [
         'search' => 'Search',
         'search_city' => 'Search by city',
         'back' => 'Back',
+        'delete' => 'Delete',
     ],
     'units' => [
         'temperature' => 'Temperature',
@@ -26,5 +27,8 @@ return [
     ],
     'title' => [
         'settings' => 'Settings',
+        'dashboard' => 'Dashboard',
+        'subscription' => 'Your subscriptions',
+        'without_subscription' => 'You dont have any subscriptions yet',
     ],
 ];

@@ -3,28 +3,9 @@
 @inject('historyService', 'App\Services\HistoryService')
 
 @section('navbar-right')
-    <div class="d-inline-flex">
-        @auth
-            <div class="dropdown mr-4 h-25">
-                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ auth()->user()->name }}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/dashboard">Dashboard</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-                </div>
-            </div>
-        @endauth
-        @guest
-            <div class="mr-4 h3 mr-4">
-                <a href="{{ route('login') }}"><i class="fa fa-sign-in text-dark" aria-hidden="true"></i></a>
-            </div>
-        @endguest
-
-        <a href="{{ route('settings') }}">
-            <i class="fa fa-sliders fa-2x text-dark"></i>
-        </a>
-    </div>
+    <a href="{{ route('settings') }}">
+        <i class="fa fa-sliders fa-2x text-dark"></i>
+    </a>
 @endsection
 
 @section('content')

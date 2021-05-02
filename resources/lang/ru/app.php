@@ -6,6 +6,7 @@ return [
         'search' => 'Поиск',
         'search_city' => 'Поиск по городу',
         'back' => 'Назад',
+        'delete' => 'Удалить',
     ],
     'units' => [
         'temperature' => 'Температура',
@@ -26,5 +27,8 @@ return [
     ],
     'title' => [
         'settings' => 'Настройки',
+        'dashboard' => 'Админ панель',
+        'subscription' => 'Подписки',
+        'without_subscription' => 'У вас пока еще нету подписок',
     ],
 ];

@@ -18,7 +18,25 @@
                     <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
                             <a href="{{ route('home') }}" id="logo" class="font-weight-bold">Weather App</a>
-                            @yield('navbar-right')
+                            <div class="d-inline-flex align-items-center">
+                                @auth
+                                    <div class="dropdown mr-4 h-25">
+                                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {{ auth()->user()->name }}
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                                            <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="mr-4 h3 mr-4">
+                                        <a href="{{ route('login') }}"><i class="fa fa-sign-in text-dark" aria-hidden="true"></i></a>
+                                    </div>
+                                @endauth
+
+                                @yield('navbar-right')
+                            </div>
                         </div>
                     </nav>
                 </header>

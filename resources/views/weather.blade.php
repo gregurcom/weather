@@ -9,28 +9,9 @@
 @section('title', $data['location']['name'] . ' - weather forecast')
 
 @section('navbar-right')
-    <div class="d-inline-flex">
-        @auth
-            <div class="dropdown mr-4 h-25">
-                <button class="h-25 btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ auth()->user()->name }}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="/dashboard">Dashboard</a>
-                    <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
-                </div>
-            </div>
-        @endauth
-        @guest
-            <div class="mr-4 h3">
-                <a href="{{ route('login') }}"><span class="fa fa-sign-in text-dark"></span></a>
-            </div>
-        @endguest
-
-        <a href="{{ route('settings', ['from' => Route::currentRouteName(), 'q' => $query]) }}">
-            <i class="fa fa-sliders fa-2x text-dark"></i>
-        </a>
-    </div>
+    <a href="{{ route('settings', ['from' => Route::currentRouteName(), 'q' => $query]) }}">
+        <i class="fa fa-sliders fa-2x text-dark"></i>
+    </a>
 @endsection
 
 @section('sidebar')

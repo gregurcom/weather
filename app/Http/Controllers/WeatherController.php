@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\WeatherRequest;
 use App\Models\Subscription;
-use App\Models\User;
 use App\Services\HistoryService;
 use App\Services\WeatherApiService;
 use Illuminate\Contracts\View\View;
@@ -40,25 +39,6 @@ final class WeatherController extends Controller
         return redirect()
             ->route('home')
             ->with('status',  __('app.alert.city_not_found '));
-    }
-
-    public function subscribe(Request $request): RedirectResponse|View
-    {
-        if (Auth::check()) {
-            $city = Subscription::where('user_id', Auth::id())->where('name', $request->city)->get();
-
-            if (count($city) === 0) {
-                Subscription::create([
-                    'name' => $request->city,
-                    'user_id' => Auth::id(),
-                ]);
-                return back()->with('status', __('app.alert.subscribe_city'));
-            }
-
-            return back()->with('status', __('app.alert.already_subscribe'));
-        }
-
-        return view('auth.login');
     }
 }
 
