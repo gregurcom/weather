@@ -19,12 +19,16 @@ class RegisterController extends Controller
 
     public function store(RegisterRequest $request): RedirectResponse
     {
-        $user = User::create(['name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
-        Auth::login($user);
+        if ($request->password === $request->repeatPassword) {
+            $user = User::create(['name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+            Auth::login($user);
 
-        return redirect()->route('dashboard');
+            return redirect()->route('dashboard');
+        }
+
+        return back()->with('status', __('auth.alert.password_fail'));
     }
 }

@@ -26,7 +26,7 @@ class LoginController extends Controller
             return redirect()->route('dashboard');
         }
 
-        return back()->with('status', 'This user is not registered');
+        return back()->with('status', __('auth.alert.failed'));
     }
 
     public function logout(Request $request): RedirectResponse
