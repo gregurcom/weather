@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,6 @@
                     <nav class="navbar navbar-light bg-light">
                         <div class="container-fluid">
                             <a href="{{ route('home') }}" id="logo" class="font-weight-bold">Weather App</a>
-
                             @yield('navbar-right')
                         </div>
                     </nav>
