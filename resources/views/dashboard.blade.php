@@ -33,14 +33,14 @@
         </div>
         <div class="row">
             <div class="d-flex flex-column px-3 py-3">
-                @if (auth()->user()->cities->count() == 0)
+                @if (auth()->user()->subscriptions->count() == 0)
                     <span class="h4">{{ __('app.title.without_subscription') }}</span>
                 @else
                     <span class="h4">{{ __('app.title.subscription') }}</span>
                 @endif
 
                 <ul>
-                    @foreach (auth()->user()->cities as $city)
+                    @foreach (auth()->user()->subscriptions as $city)
                         <div class="mt-3 d-inline-flex align-items-center">
                             <form action="{{ route('subscribe.remove') }}" method="POST">
                                 @csrf

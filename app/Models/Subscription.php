@@ -9,6 +9,9 @@ class Subscription extends Model
 {
     use HasFactory;
 
+    /**
+     * @var array
+     */
     protected $guarded = [];
 
     public function user()

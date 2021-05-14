@@ -2,7 +2,7 @@
 
 namespace App\Console;
 
-use App\Console\Commands\SendWeatherEmail;
+use App\Console\Commands\SendDailyForecast;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        SendWeatherEmail::class,
+        SendDailyForecast::class,
     ];
 
     /**
@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('emails:weather')->dailyAt('8:00');
+        $schedule->command('app:email:daily-forecast')->dailyAt('8:00');
     }
 
     /**

@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\View\View;
 
-class LoginController extends Controller
+class AccessController extends Controller
 {
     public function index(): View
     {
         return view('auth.login');
     }
 
-    public function store(LoginRequest $request): RedirectResponse
+    public function login(LoginRequest $request): RedirectResponse
     {
         $credentials = $request->only('email', 'password');
 

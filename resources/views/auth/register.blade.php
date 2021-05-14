@@ -26,11 +26,11 @@
                 @enderror
 
                 <input type="password" name="password" class="mt-2 form-control" placeholder="{{ __('auth.input.password') }}" required>
+
+                <input type="password" name="password_confirmation" class="mt-2 form-control" placeholder="{{ __('auth.input.password_repeat') }}" required>
                 @error('password')
                     <div class="alert alert-danger mt-1">{{ $message }}</div>
                 @enderror
-
-                <input type="password" name="repeatPassword" class="mt-2 form-control" placeholder="{{ __('auth.input.password_repeat') }}" required>
 
                 @if (session('status'))
                     <div class="alert alert-danger mt-2">

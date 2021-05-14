@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Subscription;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -13,9 +12,9 @@ class SubscriptionController extends Controller
 {
     public function subscribe(Request $request): RedirectResponse|View
     {
-        $city = Subscription::where('user_id', Auth::id())->where('name', $request->city)->first();
+        $subscriptionUser = Subscription::where('user_id', Auth::id())->where('name', $request->city)->first();
 
-        if ($city === null) {
+        if (!$subscriptionUser) {
             Subscription::create([
                 'name' => $request->city,
                 'user_id' => Auth::id(),

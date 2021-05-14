@@ -40,7 +40,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function cities()
+    public function subscriptions()
     {
         return $this->hasMany(Subscription::class);
     }
