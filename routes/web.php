@@ -27,16 +27,16 @@ Route::get('weather/map', [WeatherController::class, 'map'])->name('weather.map'
 
 Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('settings');
 
-Route::get('register', [RegistrationController::class, 'index'])->name('register');
-Route::post('register', [RegistrationController::class, 'register'])->name('register.user');
+Route::get('register', [RegistrationController::class, 'show'])->name('registration.form');
+Route::post('register', [RegistrationController::class, 'register'])->name('register');
 
-Route::get('login', [AccessController::class, 'index'])->name('login');
-Route::post('login', [AccessController::class, 'login'])->name('login.user');
+Route::get('login', [AccessController::class, 'show'])->name('login.form');
+Route::post('login', [AccessController::class, 'login'])->name('login');
 
 Route::middleware('auth')->group(function() {
-    Route::get('dashboard/logout', [AccessController::class, 'logout'])->name('logout');
+    Route::get('logout', [AccessController::class, 'logout'])->name('logout');
     Route::get('weather/subscribe', [SubscriptionController::class, 'subscribe'])->name('weather.subscribe');
-    Route::delete('subscribe/remove', [SubscriptionController::class, 'subscriptionRemove'])->name('subscribe.remove');
+    Route::delete('weather/subscribe/remove', [SubscriptionController::class, 'remove'])->name('subscribe.remove');
     Route::get('dashboard', function() {
         return view('dashboard');
     })->name('dashboard');

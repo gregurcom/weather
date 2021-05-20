@@ -9,7 +9,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <form action="{{ route('register.user') }}" method="POST" class="form-signin w-25 justify-content-center text-center">
+            <form action="{{ route('register') }}" method="POST" class="form-signin w-25 justify-content-center text-center">
                 @csrf
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('images/weather-logo.png') }}" class="mb-3"/>
@@ -38,7 +38,7 @@
                     </div>
                 @endif
                 <div class="text-left mt-1">
-                    <a href="{{ route('login') }}">{{ __('auth.button.login') }}</a>
+                    <a href="{{ route('login.form') }}">{{ __('auth.button.login') }}</a>
                 </div>
                 <button class="mt-3 btn btn-lg btn-primary btn-block" type="submit">{{ __('auth.button.register') }}</button>
             </form>

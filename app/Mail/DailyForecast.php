@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendDailyWeather extends Mailable
+class DailyForecast extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,18 +17,13 @@ class SendDailyWeather extends Mailable
      *
      * @return void
      */
-    public function __construct($data)
+    public function __construct(array $data)
     {
         $this->data = $data;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
+    public function build(): self
     {
-        return $this->subject('Daily weather')->view('subscription-email');
+        return $this->subject('Daily weather')->view('email.daily_forecast');
     }
 }

@@ -11,7 +11,7 @@ use Illuminate\Contracts\View\View;
 
 class AccessController extends Controller
 {
-    public function index(): View
+    public function show(): View
     {
         return view('auth.login');
     }

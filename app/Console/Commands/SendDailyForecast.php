@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\SendDailyWeather;
+use App\Mail\DailyForecast;
 use App\Models\Subscription;
 use App\Services\WeatherApiService;
 use Illuminate\Console\Command;
@@ -28,7 +28,7 @@ class SendDailyForecast extends Command
     {
         foreach (Subscription::all() as $subscription) {
             $data = $weatherApiService->getCurrentWeather($subscription->name);
-            Mail::to($subscription->user->email)->send(new SendDailyWeather($data));
+            Mail::to($subscription->user->email)->send(new DailyForecast($data));
         }
     }
 }

@@ -12,9 +12,9 @@ class SubscriptionController extends Controller
 {
     public function subscribe(Request $request): RedirectResponse|View
     {
-        $subscriptionUser = Subscription::where('user_id', Auth::id())->where('name', $request->city)->first();
+        $subscription = Subscription::where('user_id', Auth::id())->where('name', $request->city)->first();
 
-        if (!$subscriptionUser) {
+        if (!$subscription) {
             Subscription::create([
                 'name' => $request->city,
                 'user_id' => Auth::id(),
@@ -26,7 +26,7 @@ class SubscriptionController extends Controller
         return back()->with('status', __('app.alert.already_subscribe'));
     }
 
-    public function subscriptionRemove(Request $request): RedirectResponse
+    public function remove(Request $request): RedirectResponse
     {
         Subscription::where('user_id', Auth::id())->where('name', $request->city)->delete();
 
