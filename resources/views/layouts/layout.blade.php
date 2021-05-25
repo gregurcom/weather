@@ -31,7 +31,7 @@
                                     </div>
                                 @else
                                     <div class="mr-4">
-                                        <a href="{{ route('login.form') }}" class="h3"><i class="fa fa-sign-in text-dark" aria-hidden="true"></i></a>
+                                        <a href="{{ route('login.show') }}" class="h3"><i class="fa fa-sign-in text-dark" aria-hidden="true"></i></a>
                                     </div>
                                 @endauth
 

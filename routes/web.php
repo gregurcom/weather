@@ -27,16 +27,16 @@ Route::get('weather/map', [WeatherController::class, 'map'])->name('weather.map'
 
 Route::match(['get', 'post'], 'settings', [SettingController::class, 'settings'])->name('settings');
 
-Route::get('register', [RegistrationController::class, 'show'])->name('registration.form');
+Route::get('register', [RegistrationController::class, 'show'])->name('registration.show');
 Route::post('register', [RegistrationController::class, 'register'])->name('register');
 
-Route::get('login', [AccessController::class, 'show'])->name('login.form');
+Route::get('login', [AccessController::class, 'show'])->name('login.show');
 Route::post('login', [AccessController::class, 'login'])->name('login');
 
 Route::middleware('auth')->group(function() {
     Route::get('logout', [AccessController::class, 'logout'])->name('logout');
     Route::get('weather/subscribe', [SubscriptionController::class, 'subscribe'])->name('weather.subscribe');
-    Route::delete('weather/subscribe/remove', [SubscriptionController::class, 'remove'])->name('subscribe.remove');
+    Route::delete('weather/subscribe', [SubscriptionController::class, 'remove'])->name('subscribe.remove');
     Route::get('dashboard', function() {
         return view('dashboard');
     })->name('dashboard');

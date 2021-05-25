@@ -32,7 +32,7 @@
                 @endif
 
                 <div class="text-left mt-1">
-                    <a href="{{ route('registration.form') }}">{{ __('auth.button.register') }}</a>
+                    <a href="{{ route('registration.show') }}">{{ __('auth.button.register') }}</a>
                 </div>
                 <button class="mt-3 btn btn-lg btn-primary btn-block" type="submit">{{ __('auth.button.login') }}</button>
             </form>
