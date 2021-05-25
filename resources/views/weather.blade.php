@@ -27,7 +27,10 @@
     <div class="container-fluid text-center">
         <div class="h1">{{ $data['location']['name'] }}
             <a href="{{ route('weather.map', ['q' => $query]) }}">
-                <span class="fa fa-map-marker ml-1 text-dark" id="map-button"></span>
+                <span class="fa fa-map-marker ml-2 text-dark" id="map-button"></span>
+            </a>
+            <a href="{{ route('weather.subscribe', ['city' => $data['location']['name']]) }}">
+                <span class="fa fa-rss ml-1 text-dark"></span>
             </a>
         </div>
 
@@ -73,6 +76,12 @@
                         </tr>
                     </thead>
                 </table>
+
+                @if (session('status'))
+                    <div class="alert alert-info mt-2">
+                        {{ session('status') }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

@@ -4,12 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class WeatherRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     public function rules(): array
     {
         return [
-            'q' => 'required|string',
+            'email' => 'required|string|email|max:255',
+            'password' => 'required|string|min:6',
         ];
     }
 }
