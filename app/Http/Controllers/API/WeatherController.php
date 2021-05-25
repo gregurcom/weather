@@ -13,6 +13,10 @@ class WeatherController extends Controller
     {
         $cities = $weatherApiService->getSearch($request->q);
 
-        return response($cities);
+        if ($cities) {
+            return response($cities);
+        }
+
+        return response('Some errors, please try later');
     }
 }
