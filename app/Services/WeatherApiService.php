@@ -31,17 +31,17 @@ final class WeatherApiService
         }
     }
 
-    public function getSearch(string $query): array|null
+    public function getSearch(string $query): array
     {
         $data = Http::get(self::URL . '/search.json', [
             'key' => config('app.weatherapi_key'),
             'q' => $query,
         ]);
 
-        if ($data->successful()) {
-            return array_map(fn($city) => $city['name'], $data->json());
+        if ($data->failed() || empty($data->json())) {
+            throw new \Exception('City was not found');
         }
 
-        return null;
+        return array_map(fn($city) => $city['name'], $data->json());
     }
 }

@@ -11,12 +11,12 @@ class WeatherController extends Controller
 {
     public function searchAutocomplete(WeatherRequest $request, WeatherApiService $weatherApiService): Response
     {
-        $cities = $weatherApiService->getSearch($request->q);
+        try {
+            $cities = $weatherApiService->getSearch($request->q);
 
-        if ($cities) {
             return response($cities);
+        } catch (\Exception $e) {
+            return response([$e->getMessage()]);
         }
-
-        return response('Some errors, please try later');
     }
 }
