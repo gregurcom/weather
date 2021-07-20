@@ -38,9 +38,7 @@ final class WeatherApiService
             'q' => $query,
         ]);
 
-        if ($data->failed() || empty($data->json())) {
-            throw new \Exception('City was not found');
-        }
+        $data->throw();
 
         return array_map(fn($city) => $city['name'], $data->json());
     }
