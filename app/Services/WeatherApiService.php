@@ -38,6 +38,8 @@ final class WeatherApiService
             'q' => $query,
         ]);
 
+        $data->throw();
+
         return array_map(fn($city) => $city['name'], $data->json());
     }
 }
