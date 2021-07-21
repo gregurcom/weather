@@ -50,3 +50,5 @@ task('services:restart', function () {
     run('service nginx restart');
 });
 after('deploy:symlink', 'services:restart');
+
+after('deploy:update_code', 'artisan:migrate');
