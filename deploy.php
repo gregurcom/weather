@@ -51,4 +51,4 @@ task('services:restart', function () {
 });
 after('deploy:symlink', 'services:restart');
 
-after('deploy:update_code', 'artisan:migrate');
+after('deploy:vendors', 'artisan:migrate');
