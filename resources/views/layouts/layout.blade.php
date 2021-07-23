@@ -9,6 +9,11 @@
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
+        @env('production')
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK8TXWSM3Z"></script>
+            <script src="{{ asset('js/googleAnalytics.js') }}"></script>
+        @endenv
+        
         <title>@yield('title', 'Weather App')</title>
     </head>
     <body class="h-100">
