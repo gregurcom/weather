@@ -10,10 +10,17 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
         @env('production')
+            <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=G-HK8TXWSM3Z"></script>
-            <script src="{{ asset('js/googleAnalytics.js') }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-HK8TXWSM3Z');
+            </script>
         @endenv
-        
+
         <title>@yield('title', 'Weather App')</title>
     </head>
     <body class="h-100">
