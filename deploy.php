@@ -52,3 +52,7 @@ task('services:restart', function () {
 after('deploy:symlink', 'services:restart');
 
 after('deploy:vendors', 'artisan:migrate');
+
+task('sitemap:generate', function () {
+    run('php artisan app:generate-sitemap');
+});
