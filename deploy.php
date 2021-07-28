@@ -51,6 +51,7 @@ task('services:restart', function () {
 });
 
 task('app:generate-sitemap', function () {
+    cd('{{release_path}}');
     run('php artisan app:generate-sitemap');
 });
 
