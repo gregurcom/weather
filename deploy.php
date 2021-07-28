@@ -50,7 +50,7 @@ task('services:restart', function () {
     run('service nginx restart');
 });
 
-task('sitemap:generate', function () {
+task('app:generate-sitemap', function () {
     run('php artisan app:generate-sitemap');
 });
 
@@ -58,4 +58,4 @@ after('deploy:symlink', 'services:restart');
 
 after('deploy:vendors', 'artisan:migrate');
 
-after('deploy', 'sitemap:generate');
+after('deploy', 'app:generate-sitemap');
