@@ -19,23 +19,12 @@ class Kernel extends ConsoleKernel
         GenerateSitemap::class,
     ];
 
-    /**
-     * Define the application's command schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
-     */
-    protected function schedule(Schedule $schedule)
+    protected function schedule(Schedule $schedule): void
     {
         $schedule->command('app:email:daily-forecast')->dailyAt('8:00');
     }
 
-    /**
-     * Register the commands for the application.
-     *
-     * @return void
-     */
-    protected function commands()
+    protected function commands(): void
     {
         // $this->load(__DIR__.'/Commands');
 

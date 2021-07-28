@@ -1,3 +1,5 @@
+@php declare(strict_types = 1); @endphp
+
 @extends('layouts.layout')
 
 @inject('settingsService', 'App\Services\SettingsService')

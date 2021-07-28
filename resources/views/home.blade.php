@@ -1,3 +1,5 @@
+@php declare(strict_types = 1); @endphp
+
 @extends('layouts.layout')
 
 @inject('historyService', 'App\Services\HistoryService')

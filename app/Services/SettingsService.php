@@ -8,12 +8,7 @@ class SettingsService
 {
     private const SESSION_KEY = 'settings';
 
-    private Store $store;
-
-    public function __construct(Store $store)
-    {
-        $this->store = $store;
-    }
+    public function __construct(private Store $store) {}
 
     public function save(array $date): void
     {
