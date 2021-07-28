@@ -49,6 +49,13 @@ task('services:restart', function () {
     run('service php8.0-fpm restart');
     run('service nginx restart');
 });
+
+task('sitemap:generate', function () {
+    run('php artisan app:generate-sitemap');
+});
+
 after('deploy:symlink', 'services:restart');
 
 after('deploy:vendors', 'artisan:migrate');
+
+after('deploy', 'sitemap:generate');
