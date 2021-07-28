@@ -20,12 +20,12 @@ class GenerateSitemap extends Command
      *
      * @var string
      */
-    protected $description = 'Generate sitemap when deploy app';
+    protected $description = 'Generate sitemap';
 
     public function handle(): void
     {
         Sitemap::create()
-            ->add(Url::create('/')->setPriority(0.1))
+            ->add(Url::create('/'))
             ->add(Url::create('/settings'))
             ->add(Url::create('/login'))
             ->add(Url::create('/register'))

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d461b422f1613d1aea99daf70c7d206",
+    "content-hash": "a875f3553e725e752053b30056960e6e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1938,22 +1938,23 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.50.0",
+            "version": "2.51.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "f47f17d17602b2243414a44ad53d9f8b9ada5fdb"
+                "reference": "48ebff252df4d3b60ecb8e2583f79dfba6b56bc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/f47f17d17602b2243414a44ad53d9f8b9ada5fdb",
-                "reference": "f47f17d17602b2243414a44ad53d9f8b9ada5fdb",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/48ebff252df4d3b60ecb8e2583f79dfba6b56bc8",
+                "reference": "48ebff252df4d3b60ecb8e2583f79dfba6b56bc8",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": "^7.1.8 || ^8.0",
                 "symfony/polyfill-mbstring": "^1.0",
+                "symfony/polyfill-php80": "^1.16",
                 "symfony/translation": "^3.4 || ^4.0 || ^5.0"
             },
             "require-dev": {
@@ -1972,8 +1973,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.x-dev",
-                    "dev-3.x": "3.x-dev"
+                    "dev-3.x": "3.x-dev",
+                    "dev-master": "2.x-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -2027,7 +2028,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-28T22:38:45+00:00"
+            "time": "2021-07-28T08:28:41+00:00"
         },
         {
             "name": "nette/schema",
@@ -3072,21 +3073,21 @@
         },
         {
             "name": "spatie/browsershot",
-            "version": "3.47.0",
+            "version": "3.48.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/browsershot.git",
-                "reference": "4975143f1e5bd0bcb023f00c05d8c6b24e788f2d"
+                "reference": "4dfbfbb3ad9e83b8508550e83f0aa58c79c79c5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/4975143f1e5bd0bcb023f00c05d8c6b24e788f2d",
-                "reference": "4975143f1e5bd0bcb023f00c05d8c6b24e788f2d",
+                "url": "https://api.github.com/repos/spatie/browsershot/zipball/4dfbfbb3ad9e83b8508550e83f0aa58c79c79c5a",
+                "reference": "4dfbfbb3ad9e83b8508550e83f0aa58c79c79c5a",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4|^8.0",
-                "spatie/image": "^1.5.3",
+                "spatie/image": "^1.5.3|^2.0",
                 "spatie/temporary-directory": "^1.1|^2.0",
                 "symfony/process": "^4.2|^5.0"
             },
@@ -3126,7 +3127,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/browsershot/issues",
-                "source": "https://github.com/spatie/browsershot/tree/3.47.0"
+                "source": "https://github.com/spatie/browsershot/tree/3.48.0"
             },
             "funding": [
                 {
@@ -3134,7 +3135,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-10T22:10:51+00:00"
+            "time": "2021-07-28T08:05:30+00:00"
         },
         {
             "name": "spatie/crawler",
@@ -8859,16 +8860,16 @@
         },
         {
             "name": "theseer/tokenizer",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/tokenizer.git",
-                "reference": "75a63c33a8577608444246075ea0af0d052e452a"
+                "reference": "34a41e998c2183e22995f158c581e7b5e755ab9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/75a63c33a8577608444246075ea0af0d052e452a",
-                "reference": "75a63c33a8577608444246075ea0af0d052e452a",
+                "url": "https://api.github.com/repos/theseer/tokenizer/zipball/34a41e998c2183e22995f158c581e7b5e755ab9e",
+                "reference": "34a41e998c2183e22995f158c581e7b5e755ab9e",
                 "shasum": ""
             },
             "require": {
@@ -8897,7 +8898,7 @@
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
             "support": {
                 "issues": "https://github.com/theseer/tokenizer/issues",
-                "source": "https://github.com/theseer/tokenizer/tree/master"
+                "source": "https://github.com/theseer/tokenizer/tree/1.2.1"
             },
             "funding": [
                 {
@@ -8905,7 +8906,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-07-12T23:59:07+00:00"
+            "time": "2021-07-28T10:34:58+00:00"
         }
     ],
     "aliases": [],
