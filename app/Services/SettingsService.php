@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Services;
 
 use Illuminate\Session\Store;
@@ -8,12 +10,7 @@ class SettingsService
 {
     private const SESSION_KEY = 'settings';
 
-    private Store $store;
-
-    public function __construct(Store $store)
-    {
-        $this->store = $store;
-    }
+    public function __construct(private Store $store) {}
 
     public function save(array $date): void
     {
