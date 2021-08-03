@@ -30,7 +30,9 @@ class SendDailyForecast extends Command
     {
         foreach (Subscription::all() as $subscription) {
             $data = $weatherApiService->getCurrentWeather($subscription->name);
-            Mail::to($subscription->user->email)->send(new DailyForecast($data));
+            if ($data !== null) {
+                Mail::to($subscription->user->email)->send(new DailyForecast($data));
+            }
         }
     }
 }

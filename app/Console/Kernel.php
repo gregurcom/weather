@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     /**
      * The Artisan commands provided by your application.
      *
-     * @var array
+     * @var array<class-string>
      */
     protected $commands = [
         SendDailyForecast::class,

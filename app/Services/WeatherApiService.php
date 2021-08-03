@@ -11,6 +11,9 @@ final class WeatherApiService
 {
     private const URL = 'http://api.weatherapi.com/v1';
 
+    /**
+     * @return array<string>|null
+     */
     public function getCurrentWeather(string $query): array|null
     {
         if (Cache::has('weather_' . $query)) {
@@ -33,6 +36,11 @@ final class WeatherApiService
         }
     }
 
+    /**
+     * @param string $query
+     * @return array<string>
+     * @throws \Illuminate\Http\Client\RequestException
+     */
     public function getSearch(string $query): array
     {
         $data = Http::get(self::URL . '/search.json', [

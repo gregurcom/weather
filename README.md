@@ -35,3 +35,16 @@ chmod +x /usr/local/bin/dep
 ```
 
 2. Run deploy: `dep deploy production`
+
+## Code analysis
+1. Run analysis:
+```
+./vendor/bin/phpstan analyse
+```
+If you are getting the error `Allowed memory size exhausted`, then you can use the --memory-limit option fix the problem:
+```
+./vendor/bin/phpstan analyse --memory-limit=2G
+```
+2. Setting analysis config file:
+
+`phpstan.neon` - a configuration file in which you can change the code analysis rules.For more details check phpstan documentation: https://phpstan.org/user-guide/getting-started

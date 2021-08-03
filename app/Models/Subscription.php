@@ -15,6 +15,7 @@ use Illuminate\Support\Carbon;
  * @property int $user_id
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property-read User $user
  */
 class Subscription extends Model
 {

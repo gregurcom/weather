@@ -32,6 +32,9 @@ final class HistoryService
         $this->store->put(self::STORE_KEY, $storeData);
     }
 
+    /**
+     * @return array<string>
+    */
     public function get(): array
     {
         return $this->store->get(self::STORE_KEY, []);
