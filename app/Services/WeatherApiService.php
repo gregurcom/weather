@@ -12,9 +12,13 @@ final class WeatherApiService
     private const URL = 'http://api.weatherapi.com/v1';
 
     /**
-     * @return array<string>|null
+     * @param string $query
+     *
+     * @return array<string>
+     *
+     * @throws \Illuminate\Http\Client\RequestException
      */
-    public function getCurrentWeather(string $query): array|null
+    public function getCurrentWeather(string $query): array
     {
         if (Cache::has('weather_' . $query)) {
 
@@ -25,20 +29,20 @@ final class WeatherApiService
                 'q' => $query,
             ]);
 
-            if ($data->successful()) {
-                return Cache::remember('weather_' . $query, 600, function () use ($data) {
+            $data->throw();
 
-                    return $data->json();
-                });
-            }
+            return Cache::remember('weather_' . $query, 600, function () use ($data) {
 
-            return null;
+                return $data->json();
+            });
         }
     }
 
     /**
      * @param string $query
+     *
      * @return array<string>
+     *
      * @throws \Illuminate\Http\Client\RequestException
      */
     public function getSearch(string $query): array
