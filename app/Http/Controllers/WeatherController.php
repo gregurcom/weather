@@ -10,6 +10,7 @@ use App\Services\WeatherApiService;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Log;
 
 final class WeatherController extends Controller
 {
@@ -21,6 +22,7 @@ final class WeatherController extends Controller
 
             return view('weather', ['data' => $data, 'query' => $request->q]);
         } catch (RequestException $e) {
+            Log::error($e->getMessage());
 
             return redirect()
                 ->route('home')
@@ -35,6 +37,7 @@ final class WeatherController extends Controller
 
             return view('map', ['data' => $data, 'query' => $request->q]);
         } catch (RequestException $e) {
+            Log::error($e->getMessage());
 
             return redirect()
                 ->route('home')
