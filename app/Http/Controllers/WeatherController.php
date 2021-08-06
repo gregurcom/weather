@@ -22,7 +22,7 @@ final class WeatherController extends Controller
 
             return view('weather', ['data' => $data, 'query' => $request->q]);
         } catch (RequestException $e) {
-            Log::error($e->getMessage());
+            Log::error($e->getMessage(), ['query' => $request->q]);
 
             return redirect()
                 ->route('home')
@@ -37,7 +37,7 @@ final class WeatherController extends Controller
 
             return view('map', ['data' => $data, 'query' => $request->q]);
         } catch (RequestException $e) {
-            Log::error($e->getMessage());
+            Log::error($e->getMessage(), ['query' => $request->q]);
 
             return redirect()
                 ->route('home')

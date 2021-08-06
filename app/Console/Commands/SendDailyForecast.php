@@ -35,7 +35,7 @@ class SendDailyForecast extends Command
                 $data = $weatherApiService->getCurrentWeather($subscription->name);
                 Mail::to($subscription->user->email)->send(new DailyForecast($data));
             } catch (RequestException $e) {
-                Log::error($e->getMessage());
+                Log::error($e->getMessage(), ['subscription_id' => $subscription->id, 'name' => $subscription->name]);
             }
         }
     }
