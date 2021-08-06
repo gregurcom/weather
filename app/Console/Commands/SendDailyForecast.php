@@ -30,13 +30,13 @@ class SendDailyForecast extends Command
 
     public function handle(WeatherApiService $weatherApiService): void
     {
-        try {
-            foreach (Subscription::all() as $subscription) {
+        foreach (Subscription::all() as $subscription) {
+            try {
                 $data = $weatherApiService->getCurrentWeather($subscription->name);
                 Mail::to($subscription->user->email)->send(new DailyForecast($data));
+            } catch (RequestException $e) {
+                Log::error($e->getMessage());
             }
-        } catch (RequestException $e) {
-            Log::error($e->getMessage());
         }
     }
 }

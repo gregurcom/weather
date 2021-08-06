@@ -14,9 +14,9 @@ final class WeatherApiService
     /**
      * @param string $query
      *
-     * @return array<string>
-     *
      * @throws \Illuminate\Http\Client\RequestException
+     *
+     * @return array<string>
      */
     public function getCurrentWeather(string $query): array
     {
@@ -41,9 +41,9 @@ final class WeatherApiService
     /**
      * @param string $query
      *
-     * @return array<string>
-     *
      * @throws \Illuminate\Http\Client\RequestException
+     *
+     * @return array<string>
      */
     public function getSearch(string $query): array
     {

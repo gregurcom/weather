@@ -17,7 +17,7 @@ return [
         'pressure' => 'Pressure',
     ],
     'alert' => [
-        'city_not_found' => 'City was not found.',
+        'something_wrong' => 'Something went wrong. Please try again later.',
         'settings_changed' => 'You have successfully changed the settings.',
         'subscribe_city' => 'You have successfully added this city to your subscriptions.',
         'already_subscribe' => 'You are already subscribed to this city.',
