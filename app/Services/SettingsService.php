@@ -12,6 +12,9 @@ class SettingsService
 
     public function __construct(private Store $store) {}
 
+    /**
+     * @param array<string> $date
+    */
     public function save(array $date): void
     {
         $this->store->put(self::SESSION_KEY, [

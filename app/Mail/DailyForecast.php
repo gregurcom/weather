@@ -12,12 +12,15 @@ class DailyForecast extends Mailable
 {
     use Queueable, SerializesModels;
 
+    /**
+     * @var array<string>
+    */
     public array $data;
 
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param array<string> $data
      */
     public function __construct(array $data)
     {

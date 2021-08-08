@@ -8,6 +8,8 @@ use App\Mail\DailyForecast;
 use App\Models\Subscription;
 use App\Services\WeatherApiService;
 use Illuminate\Console\Command;
+use Illuminate\Http\Client\RequestException;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class SendDailyForecast extends Command
@@ -29,8 +31,12 @@ class SendDailyForecast extends Command
     public function handle(WeatherApiService $weatherApiService): void
     {
         foreach (Subscription::all() as $subscription) {
-            $data = $weatherApiService->getCurrentWeather($subscription->name);
-            Mail::to($subscription->user->email)->send(new DailyForecast($data));
+            try {
+                $data = $weatherApiService->getCurrentWeather($subscription->name);
+                Mail::to($subscription->user->email)->send(new DailyForecast($data));
+            } catch (RequestException $e) {
+                Log::error($e->getMessage(), ['subscription_id' => $subscription->id, 'name' => $subscription->name]);
+            }
         }
     }
 }

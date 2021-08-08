@@ -51,7 +51,7 @@
 
                         @if (session('status'))
                             <div class="alert alert-danger mt-2">
-                                {{ __('app.alert.city_not_found') }}
+                                {{ session('status') }}
                             </div>
                         @endif
 
